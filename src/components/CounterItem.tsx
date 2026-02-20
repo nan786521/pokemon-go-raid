@@ -9,9 +9,9 @@ interface Props {
 }
 
 const ROLE_STYLE: Record<CounterRole, { label: string; cls: string }> = {
-  attacker: { label: '攻擊', cls: 'bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300' },
-  tank:     { label: '坦克', cls: 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' },
-  healer:   { label: '補師', cls: 'bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300' },
+  attacker: { label: '攻擊', cls: 'bg-red-500 text-white dark:bg-red-600 dark:text-white' },
+  tank:     { label: '坦克', cls: 'bg-blue-500 text-white dark:bg-blue-600 dark:text-white' },
+  healer:   { label: '補師', cls: 'bg-emerald-500 text-white dark:bg-emerald-600 dark:text-white' },
 };
 
 export function CounterItem({ counter, rank, compact }: Props) {
@@ -20,7 +20,7 @@ export function CounterItem({ counter, rank, compact }: Props) {
 
   if (compact) {
     return (
-      <div className="flex items-center gap-2 rounded-lg bg-white/60 px-2 py-1.5 dark:bg-white/10">
+      <div className="flex items-center gap-2 rounded-lg bg-white px-2 py-1.5 shadow-sm dark:bg-gray-700">
         <img
           src={getSpriteUrl(counter.pokemon_id)}
           alt={counter.name['zh-TW']}

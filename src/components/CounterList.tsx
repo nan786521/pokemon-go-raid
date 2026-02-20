@@ -20,11 +20,11 @@ export function CounterList({ counters }: Props) {
     <div className="flex flex-col gap-2 p-3 pt-0">
       {/* Recommended team composition */}
       {hasTeam && (
-        <div className="rounded-xl border border-amber-200 bg-amber-50/80 p-2.5 dark:border-amber-700/50 dark:bg-amber-900/20">
-          <div className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300">
+        <div className="rounded-xl border-2 border-amber-400 bg-amber-50 p-2.5 dark:border-amber-500 dark:bg-gray-800">
+          <div className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-800 dark:text-amber-200">
             <span>⚔</span>
             <span>推薦隊伍組合</span>
-            <span className="ml-auto font-normal text-amber-600/70 dark:text-amber-400/60">
+            <span className="ml-auto font-normal text-amber-700 dark:text-amber-300">
               {teamTanks.length}坦 + 1打{teamHealer ? ' + 1補' : ''}
             </span>
           </div>
