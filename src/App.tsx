@@ -93,7 +93,7 @@ function App() {
         </div>
 
         {/* Boss grid */}
-        <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map(b => (
             <div key={b.id} id={`boss-${b.id}`}>
               <BossCard boss={b} />

@@ -1,19 +1,56 @@
-import type { Counter } from '../types';
+import type { Counter, CounterRole } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { getSpriteUrl } from '../utils/pokemon';
 
 interface Props {
   counter: Counter;
-  rank: number;
+  rank?: number;
+  compact?: boolean;
 }
 
-export function CounterItem({ counter, rank }: Props) {
+const ROLE_STYLE: Record<CounterRole, { label: string; cls: string }> = {
+  attacker: { label: '攻擊', cls: 'bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300' },
+  tank:     { label: '坦克', cls: 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' },
+  healer:   { label: '補師', cls: 'bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300' },
+};
+
+export function CounterItem({ counter, rank, compact }: Props) {
+  const role = counter.role ?? 'attacker';
+  const rs = ROLE_STYLE[role];
+
+  if (compact) {
+    return (
+      <div className="flex items-center gap-2 rounded-lg bg-white/60 px-2 py-1.5 dark:bg-white/10">
+        <img
+          src={getSpriteUrl(counter.pokemon_id)}
+          alt={counter.name['zh-TW']}
+          loading="lazy"
+          className="h-8 w-8 shrink-0"
+          style={{ imageRendering: 'pixelated' }}
+        />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-1">
+            <span className={`rounded px-1 py-px text-[10px] font-bold ${rs.cls}`}>{rs.label}</span>
+            <span className="truncate text-xs font-bold text-gray-900 dark:text-white">{counter.name['zh-TW']}</span>
+          </div>
+          <div className="mt-0.5 flex items-center gap-1 text-[10px] text-gray-500 dark:text-gray-400">
+            <span>{counter.fast_move.name}</span>
+            <span>/</span>
+            <span>{counter.charged_move.name}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-gray-100 bg-white p-2 dark:border-gray-700 dark:bg-gray-800">
+    <div className="flex items-center gap-3 rounded-lg bg-white/60 p-2 dark:bg-white/10">
       {/* Rank */}
-      <span className="w-5 shrink-0 text-center text-sm font-bold text-gray-400">
-        {rank}
-      </span>
+      {rank != null && (
+        <span className="w-5 shrink-0 text-center text-sm font-bold text-gray-400">
+          {rank}
+        </span>
+      )}
 
       {/* Sprite */}
       <img
@@ -27,6 +64,7 @@ export function CounterItem({ counter, rank }: Props) {
       {/* Info */}
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5">
+          <span className={`rounded px-1 py-px text-[10px] font-bold ${rs.cls}`}>{rs.label}</span>
           <span className="text-sm font-bold text-gray-900 dark:text-white">
             {counter.name['zh-TW']}
           </span>
