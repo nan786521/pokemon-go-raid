@@ -40,7 +40,7 @@ export function BossCard({ boss }: Props) {
       {/* Card Header - clickable */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-start gap-3 p-3 text-left transition-colors hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-gray-700/50 dark:active:bg-gray-700"
+        className="flex w-full min-h-[11rem] items-start gap-3 p-3 text-left transition-colors hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-gray-700/50 dark:active:bg-gray-700"
       >
         {/* Pokemon Image */}
         <div className="relative h-16 w-16 shrink-0">
