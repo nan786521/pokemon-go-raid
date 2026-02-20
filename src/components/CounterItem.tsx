@@ -9,7 +9,7 @@ interface Props {
 
 export function CounterItem({ counter, rank }: Props) {
   return (
-    <div className="flex items-center gap-3 rounded-lg bg-white/60 p-2 dark:bg-white/10">
+    <div className="flex items-center gap-3 rounded-lg border border-gray-100 bg-white p-2 dark:border-gray-700 dark:bg-gray-800">
       {/* Rank */}
       <span className="w-5 shrink-0 text-center text-sm font-bold text-gray-400">
         {rank}
