@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for manual toggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Hide scrollbar for type filter chips */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;

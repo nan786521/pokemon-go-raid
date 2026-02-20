@@ -29,7 +29,6 @@ function Countdown({ end }: { end: string }) {
 export const BossCard = memo(function BossCard({ boss }: Props) {
   const [open, setOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
-  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
@@ -41,16 +40,12 @@ export const BossCard = memo(function BossCard({ boss }: Props) {
       >
         {/* Pokemon Image */}
         <div className="relative h-16 w-16 shrink-0">
-          {!imgLoaded && (
-            <div className="absolute inset-0 animate-pulse rounded-lg bg-gray-200 dark:bg-gray-700" />
-          )}
           <img
             src={imgError ? getSpriteUrl(boss.pokemon_id) : getOfficialArtUrl(boss.pokemon_id)}
             alt={boss.name['zh-TW']}
             loading="lazy"
-            className={`h-16 w-16 object-contain transition-opacity ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
-            onLoad={() => setImgLoaded(true)}
-            onError={() => { setImgError(true); setImgLoaded(false); }}
+            className="h-16 w-16 object-contain"
+            onError={() => setImgError(true)}
           />
           {boss.current && (
             <span className="absolute -top-1 -right-1 flex h-3 w-3">
