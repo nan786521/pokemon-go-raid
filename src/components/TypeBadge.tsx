@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { PokemonType } from '../types';
 import { TYPE_COLORS } from '../utils/typeColors';
 
@@ -6,7 +7,7 @@ interface Props {
   size?: 'sm' | 'md';
 }
 
-export function TypeBadge({ type, size = 'md' }: Props) {
+export const TypeBadge = memo(function TypeBadge({ type, size = 'md' }: Props) {
   const info = TYPE_COLORS[type];
   const cls = size === 'sm' ? 'px-1.5 py-0.5 text-xs' : 'px-2 py-0.5 text-sm';
   return (
@@ -17,4 +18,4 @@ export function TypeBadge({ type, size = 'md' }: Props) {
       {info.label}
     </span>
   );
-}
+});

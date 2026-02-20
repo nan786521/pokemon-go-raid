@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Recommendation } from '../types';
 import { RECOMMEND_INFO } from '../utils/recommend';
 
@@ -5,7 +6,7 @@ interface Props {
   level: Recommendation;
 }
 
-export function RecommendBadge({ level }: Props) {
+export const RecommendBadge = memo(function RecommendBadge({ level }: Props) {
   const info = RECOMMEND_INFO[level];
   return (
     <span
@@ -16,4 +17,4 @@ export function RecommendBadge({ level }: Props) {
       <span>{level} {info.label}</span>
     </span>
   );
-}
+});

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import type { Boss } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { RecommendBadge } from './RecommendBadge';
@@ -26,25 +26,31 @@ function Countdown({ end }: { end: string }) {
   return <span className="text-xs text-emerald-500">剩餘 {days}天{hours}時</span>;
 }
 
-export function BossCard({ boss }: Props) {
+export const BossCard = memo(function BossCard({ boss }: Props) {
   const [open, setOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
       {/* Card Header - clickable */}
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="flex w-full items-start gap-3 p-3 text-left transition-colors hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-gray-750 dark:active:bg-gray-700"
       >
         {/* Pokemon Image */}
-        <div className="relative shrink-0">
+        <div className="relative h-16 w-16 shrink-0">
+          {!imgLoaded && (
+            <div className="absolute inset-0 animate-pulse rounded-lg bg-gray-200 dark:bg-gray-700" />
+          )}
           <img
             src={imgError ? getSpriteUrl(boss.pokemon_id) : getOfficialArtUrl(boss.pokemon_id)}
             alt={boss.name['zh-TW']}
             loading="lazy"
-            className="h-16 w-16 object-contain"
-            onError={() => setImgError(true)}
+            className={`h-16 w-16 object-contain transition-opacity ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setImgLoaded(true)}
+            onError={() => { setImgError(true); setImgLoaded(false); }}
           />
           {boss.current && (
             <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -119,4 +125,4 @@ export function BossCard({ boss }: Props) {
       )}
     </div>
   );
-}
+});

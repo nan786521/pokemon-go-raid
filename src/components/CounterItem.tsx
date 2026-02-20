@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Counter, CounterRole } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { getSpriteUrl } from '../utils/pokemon';
@@ -14,7 +15,7 @@ const ROLE_STYLE: Record<CounterRole, { label: string; cls: string }> = {
   healer:   { label: '補師', cls: 'bg-emerald-500 text-white dark:bg-emerald-600 dark:text-white' },
 };
 
-export function CounterItem({ counter, rank, compact }: Props) {
+export const CounterItem = memo(function CounterItem({ counter, rank, compact }: Props) {
   const role = counter.role ?? 'attacker';
   const rs = ROLE_STYLE[role];
 
@@ -102,4 +103,4 @@ export function CounterItem({ counter, rank, compact }: Props) {
       </div>
     </div>
   );
-}
+});

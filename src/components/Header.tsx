@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef } from 'react';
+
 interface Props {
   query: string;
   onQueryChange: (q: string) => void;
@@ -6,6 +8,19 @@ interface Props {
 }
 
 export function Header({ query, onQueryChange, dark, onToggleTheme }: Props) {
+  const [local, setLocal] = useState(query);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => { setLocal(query); }, [query]);
+
+  function handleChange(value: string) {
+    setLocal(value);
+    clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => onQueryChange(value), 200);
+  }
+
+  useEffect(() => () => clearTimeout(timerRef.current), []);
+
   return (
     <header className="sticky top-0 z-30 bg-white/90 shadow-sm backdrop-blur dark:bg-gray-900/90">
       <div className="mx-auto flex max-w-5xl items-center gap-2 px-3 py-2">
@@ -18,9 +33,10 @@ export function Header({ query, onQueryChange, dark, onToggleTheme }: Props) {
         <div className="relative flex-1">
           <input
             type="search"
-            value={query}
-            onChange={e => onQueryChange(e.target.value)}
+            value={local}
+            onChange={e => handleChange(e.target.value)}
             placeholder="搜尋頭目（中/英/日/暱稱）"
+            aria-label="搜尋頭目"
             className="w-full rounded-full border border-gray-200 bg-gray-50 py-1.5 pr-3 pl-9 text-sm outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:ring-red-900"
           />
           <svg className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

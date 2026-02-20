@@ -12,9 +12,10 @@ export function StarFilter({ selected, onChange, availableTiers }: Props) {
   if (tiers.length === 0) return null;
 
   return (
-    <div className="flex gap-1.5">
+    <div className="flex gap-1.5" role="group" aria-label="星級篩選">
       <button
         onClick={() => onChange(null)}
+        aria-pressed={selected === null}
         className={`rounded-full px-3 py-1 text-xs font-medium transition ${
           selected === null
             ? 'bg-red-500 text-white shadow-sm'
@@ -27,6 +28,8 @@ export function StarFilter({ selected, onChange, availableTiers }: Props) {
         <button
           key={t}
           onClick={() => onChange(selected === t ? null : t)}
+          aria-pressed={selected === t}
+          aria-label={`${t}星`}
           className={`rounded-full px-3 py-1 text-xs font-medium transition ${
             selected === t
               ? 'bg-yellow-500 text-white shadow-sm'

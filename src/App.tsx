@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import type { Category, PokemonType } from './types';
 import { bosses } from './data/bosses';
 import { matchesBoss } from './utils/search';
@@ -11,13 +11,43 @@ import { TypeFilter } from './components/TypeFilter';
 import { BossCard } from './components/BossCard';
 import { CurrentBossBanner } from './components/CurrentBossBanner';
 
+// --- URL query param helpers ---
+function getParams() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  return {
+    tab: (p.get('tab') || 'all') as Category | 'all',
+    star: p.get('star') ? Number(p.get('star')) : null,
+    type: (p.get('type') || null) as PokemonType | null,
+    q: p.get('q') || '',
+    current: p.get('current') === '1',
+  };
+}
+
+function setParams(state: { tab: string; star: number | null; type: string | null; q: string; current: boolean }) {
+  const p = new URLSearchParams();
+  if (state.tab !== 'all') p.set('tab', state.tab);
+  if (state.star !== null) p.set('star', String(state.star));
+  if (state.type) p.set('type', state.type);
+  if (state.q) p.set('q', state.q);
+  if (state.current) p.set('current', '1');
+  const hash = p.toString();
+  history.replaceState(null, '', hash ? `#${hash}` : location.pathname);
+}
+
 function App() {
   const { dark, toggle } = useTheme();
-  const [activeTab, setActiveTab] = useState<Category | 'all'>('all');
-  const [starFilter, setStarFilter] = useState<number | null>(null);
-  const [typeFilter, setTypeFilter] = useState<PokemonType | null>(null);
-  const [query, setQuery] = useState('');
+  const init = getParams();
+  const [activeTab, setActiveTab] = useState<Category | 'all'>(init.tab);
+  const [starFilter, setStarFilter] = useState<number | null>(init.star);
+  const [typeFilter, setTypeFilter] = useState<PokemonType | null>(init.type);
+  const [query, setQuery] = useState(init.q);
+  const [currentOnly, setCurrentOnly] = useState(init.current);
   const listRef = useRef<HTMLDivElement>(null);
+
+  // Sync state → URL
+  useEffect(() => {
+    setParams({ tab: activeTab, star: starFilter, type: typeFilter, q: query, current: currentOnly });
+  }, [activeTab, starFilter, typeFilter, query, currentOnly]);
 
   // Current bosses
   const currentBosses = useMemo(() => bosses.filter(b => b.current), []);
@@ -35,6 +65,11 @@ function App() {
     // Tab filter
     if (activeTab !== 'all') {
       list = list.filter(b => b.category === activeTab);
+    }
+
+    // Current only
+    if (currentOnly) {
+      list = list.filter(b => b.current);
     }
 
     // Star filter
@@ -59,12 +94,12 @@ function App() {
     });
 
     return list;
-  }, [activeTab, starFilter, typeFilter, query]);
+  }, [activeTab, starFilter, typeFilter, query, currentOnly]);
 
-  function scrollToBoss(bossId: string) {
+  const scrollToBoss = useCallback((bossId: string) => {
     const el = document.getElementById(`boss-${bossId}`);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
@@ -72,16 +107,32 @@ function App() {
 
       {/* Filters */}
       <div className="sticky top-[52px] z-20 space-y-2 bg-gray-50/90 px-3 py-2 backdrop-blur dark:bg-gray-900/90">
-        {activeTab === 'raid' && (
-          <StarFilter selected={starFilter} onChange={setStarFilter} availableTiers={availableTiers} />
-        )}
+        <div className="flex items-center gap-2">
+          {/* Current only toggle */}
+          {currentBosses.length > 0 && (
+            <button
+              onClick={() => setCurrentOnly(v => !v)}
+              aria-pressed={currentOnly}
+              className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition ${
+                currentOnly
+                  ? 'bg-green-500 text-white shadow-sm'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
+              }`}
+            >
+              {currentOnly ? '● 當前輪替' : '○ 當前輪替'}
+            </button>
+          )}
+          {activeTab === 'raid' && (
+            <StarFilter selected={starFilter} onChange={setStarFilter} availableTiers={availableTiers} />
+          )}
+        </div>
         <TypeFilter selected={typeFilter} onChange={setTypeFilter} />
       </div>
 
       {/* Main content */}
       <main className="mx-auto max-w-5xl px-3 pb-24" ref={listRef}>
         {/* Current boss banner */}
-        {activeTab === 'all' && !query && (
+        {activeTab === 'all' && !query && !currentOnly && (
           <div className="mb-4">
             <CurrentBossBanner bosses={currentBosses} onSelect={scrollToBoss} />
           </div>

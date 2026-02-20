@@ -8,9 +8,10 @@ interface Props {
 
 export function TypeFilter({ selected, onChange }: Props) {
   return (
-    <div className="hide-scrollbar flex gap-1.5 overflow-x-auto pb-1">
+    <div className="hide-scrollbar flex gap-1.5 overflow-x-auto pb-1" role="group" aria-label="屬性篩選">
       <button
         onClick={() => onChange(null)}
+        aria-pressed={selected === null}
         className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition ${
           selected === null
             ? 'bg-red-500 text-white shadow-sm'
@@ -26,6 +27,8 @@ export function TypeFilter({ selected, onChange }: Props) {
           <button
             key={t}
             onClick={() => onChange(active ? null : t)}
+            aria-pressed={active}
+            aria-label={info.label}
             className="shrink-0 rounded-full px-3 py-1 text-xs font-bold transition"
             style={{
               backgroundColor: active ? info.bg : undefined,

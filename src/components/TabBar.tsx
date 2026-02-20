@@ -14,11 +14,14 @@ const tabs: { key: Category | 'all'; label: string; icon: string }[] = [
 
 export function TabBar({ active, onChange }: Props) {
   return (
-    <nav className="fixed bottom-0 left-0 z-30 w-full border-t border-gray-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur dark:border-gray-700 dark:bg-gray-900/95">
-      <div className="mx-auto flex max-w-5xl">
+    <nav className="fixed bottom-0 left-0 z-30 w-full border-t border-gray-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur dark:border-gray-700 dark:bg-gray-900/95" aria-label="分類導覽">
+      <div className="mx-auto flex max-w-5xl" role="tablist">
         {tabs.map(t => (
           <button
             key={t.key}
+            role="tab"
+            aria-selected={active === t.key}
+            aria-label={t.label}
             onClick={() => onChange(t.key)}
             className={`flex flex-1 flex-col items-center gap-0.5 py-2 text-xs font-medium transition ${
               active === t.key
