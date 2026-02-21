@@ -1,21 +1,23 @@
-import type { Counter } from '../types';
+import type { Counter, Category } from '../types';
 import { CounterItem } from './CounterItem';
 
 interface Props {
   counters: Counter[];
+  category: Category;
 }
 
-export function CounterList({ counters }: Props) {
+export function CounterList({ counters, category }: Props) {
   const attackers = counters.filter(c => c.role === 'attacker').sort((a, b) => b.dps - a.dps);
   const tanks = counters.filter(c => c.role === 'tank').sort((a, b) => b.dps - a.dps);
   const healers = counters.filter(c => c.role === 'healer').sort((a, b) => b.dps - a.dps);
 
-  // Build recommended team: all 6 counters (attackers + tanks + healers)
-  const team = [...attackers, ...tanks, ...healers];
+  // Raid bosses: attackers only; Dynamax/Gigantamax: all roles
+  const isRaid = category === 'raid';
+  const team = isRaid ? [...attackers] : [...attackers, ...tanks, ...healers];
   const hasTeam = team.length > 0;
   const atkCount = attackers.length;
-  const tankCount = tanks.length;
-  const healCount = healers.length;
+  const tankCount = isRaid ? 0 : tanks.length;
+  const healCount = isRaid ? 0 : healers.length;
   const teamLabel = [
     atkCount > 0 ? `${atkCount}打` : '',
     tankCount > 0 ? `${tankCount}坦` : '',
@@ -57,7 +59,7 @@ export function CounterList({ counters }: Props) {
         </div>
       )}
 
-      {tanks.length > 0 && (
+      {!isRaid && tanks.length > 0 && (
         <div>
           <div className="mb-1 flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400">
             <span>坦克</span>
@@ -71,7 +73,7 @@ export function CounterList({ counters }: Props) {
         </div>
       )}
 
-      {healers.length > 0 && (
+      {!isRaid && healers.length > 0 && (
         <div>
           <div className="mb-1 flex items-center gap-1 text-xs font-bold text-green-600 dark:text-green-400">
             <span>補師</span>

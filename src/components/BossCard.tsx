@@ -2,11 +2,11 @@ import { useState, memo } from 'react';
 import type { Boss } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { RecommendBadge } from './RecommendBadge';
-import { CounterList } from './CounterList';
 import { getOfficialArtUrl, getSpriteUrl } from '../utils/pokemon';
 
 interface Props {
   boss: Boss;
+  onSelect: (boss: Boss) => void;
 }
 
 function TierLabel({ boss }: { boss: Boss }) {
@@ -26,18 +26,15 @@ function Countdown({ end }: { end: string }) {
   return <span className="text-xs text-emerald-500">剩餘 {days}天{hours}時</span>;
 }
 
-export const BossCard = memo(function BossCard({ boss }: Props) {
-  const [open, setOpen] = useState(false);
+export const BossCard = memo(function BossCard({ boss, onSelect }: Props) {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
-      {/* Card Header - clickable */}
-      <button
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        className="flex w-full items-start gap-3 p-3 text-left transition-colors hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-gray-750 dark:active:bg-gray-700"
-      >
+    <button
+      onClick={() => onSelect(boss)}
+      className="w-full overflow-hidden rounded-xl border border-gray-200 bg-white text-left shadow-sm transition-colors hover:bg-gray-50 active:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-750 dark:active:bg-gray-700"
+    >
+      <div className="flex items-start gap-3 p-3">
         {/* Pokemon Image */}
         <div className="relative h-16 w-16 shrink-0">
           <img
@@ -86,38 +83,7 @@ export const BossCard = memo(function BossCard({ boss }: Props) {
             {boss.weaknesses.map(t => <TypeBadge key={t} type={t} size="sm" />)}
           </div>
         </div>
-
-        {/* Expand indicator */}
-        <span className={`mt-2 shrink-0 text-gray-400 transition-transform ${open ? 'rotate-180' : ''}`}>
-          ▼
-        </span>
-      </button>
-
-      {/* Expanded content */}
-      {open && (
-        <div className="border-t border-gray-100 bg-gray-50/50 dark:border-gray-700 dark:bg-gray-850">
-          {/* Reason */}
-          <div className="px-3 pt-3 text-xs leading-relaxed text-gray-600 dark:text-gray-300">
-            <span className="font-bold text-gray-800 dark:text-gray-100">推薦理由：</span>
-            {boss.rec_reason}
-          </div>
-
-          {/* Ratings */}
-          <div className="flex gap-4 px-3 pt-2 text-xs">
-            <span className="text-gray-500 dark:text-gray-400">
-              PVE {'★'.repeat(boss.pve_rating)}{'☆'.repeat(5 - boss.pve_rating)}
-            </span>
-            <span className="text-gray-500 dark:text-gray-400">
-              PVP {'★'.repeat(boss.pvp_rating)}{'☆'.repeat(5 - boss.pvp_rating)}
-            </span>
-          </div>
-
-          {/* Counter list */}
-          <div className="mt-2">
-            <CounterList counters={boss.counters} />
-          </div>
-        </div>
-      )}
-    </div>
+      </div>
+    </button>
   );
 });

@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
-import type { Category, PokemonType } from './types';
+import type { Boss, Category, PokemonType } from './types';
 import { bosses } from './data/bosses';
 import { matchesBoss } from './utils/search';
 import { RECOMMEND_ORDER } from './utils/recommend';
@@ -9,6 +9,7 @@ import { StarFilter } from './components/StarFilter';
 import { TypeFilter } from './components/TypeFilter';
 import { BossCard } from './components/BossCard';
 import { CurrentBossBanner } from './components/CurrentBossBanner';
+import { BottomSheet } from './components/BottomSheet';
 
 // --- URL query param helpers ---
 function getParams() {
@@ -42,6 +43,7 @@ function App() {
   const [typeFilter, setTypeFilter] = useState<PokemonType | null>(init.type);
   const [query, setQuery] = useState(init.q);
   const [currentOnly, setCurrentOnly] = useState(init.current);
+  const [selectedBoss, setSelectedBoss] = useState<Boss | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
   // Sync state → URL
@@ -147,7 +149,7 @@ function App() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map(b => (
             <div key={b.id} id={`boss-${b.id}`}>
-              <BossCard boss={b} />
+              <BossCard boss={b} onSelect={setSelectedBoss} />
             </div>
           ))}
         </div>
@@ -161,6 +163,7 @@ function App() {
       </main>
 
       <TabBar active={activeTab} onChange={setActiveTab} />
+      <BottomSheet boss={selectedBoss} onClose={() => setSelectedBoss(null)} />
     </div>
   );
 }
