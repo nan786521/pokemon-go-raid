@@ -31,7 +31,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 635, name: { 'zh-TW': '三頭龍', en: 'Hydreigon', ja: 'サザンドラ' }, types: ['dark', 'dragon'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '暴風', type: 'dark' }, dps: 19.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 248, name: { 'zh-TW': '班基拉斯', en: 'Tyranitar', ja: 'バンギラス' }, types: ['rock', 'dark'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '咬碎', type: 'dark' }, dps: 18.2, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -61,7 +61,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 407, name: { 'zh-TW': '乐散尼', en: 'Roserade', ja: 'ロズレイド' }, types: ['grass', 'poison'], fast_move: { name: '飛葉快刀', type: 'grass' }, charged_move: { name: '日光束', type: 'grass' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 9, name: { 'zh-TW': '水箭龜', en: 'Blastoise', ja: 'カメックス' }, types: ['water'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '水砲', type: 'water' }, dps: 17.8, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 227, name: { 'zh-TW': '盔甲鳥', en: 'Skarmory', ja: 'エアームド' }, types: ['steel', 'flying'], fast_move: { name: '翅膀攻擊', type: 'flying' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 11.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -91,7 +91,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 407, name: { 'zh-TW': '羅絲雷朵', en: 'Roserade', ja: 'ロズレイド' }, types: ['grass', 'poison'], fast_move: { name: '飛葉快刀', type: 'grass' }, charged_move: { name: '日光束', type: 'grass' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 181, name: { 'zh-TW': '電龍', en: 'Ampharos', ja: 'デンリュウ' }, types: ['electric'], fast_move: { name: '伏特替換', type: 'electric' }, charged_move: { name: '電磁砲', type: 'electric' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -121,7 +121,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 884, name: { 'zh-TW': '鋁鋼龍', en: 'Duraludon', ja: 'ジュラルドン' }, types: ['steel', 'dragon'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光炮', type: 'steel' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '冰之牙', type: 'ice' }, charged_move: { name: '冰凍光束', type: 'ice' }, dps: 16.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -151,7 +151,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 68, name: { 'zh-TW': '怪力', en: 'Machamp', ja: 'カイリキー' }, types: ['fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 475, name: { 'zh-TW': '艾路雷朵', en: 'Gallade', ja: 'エルレイド' }, types: ['psychic', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '近身戰', type: 'fighting' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -181,7 +181,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 282, name: { 'zh-TW': '沙奈朵', en: 'Gardevoir', ja: 'サーナイト' }, types: ['psychic', 'fairy'], fast_move: { name: '迷惑', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 149, name: { 'zh-TW': '快龍', en: 'Dragonite', ja: 'カイリュー' }, types: ['dragon', 'flying'], fast_move: { name: '龍之呼吸', type: 'dragon' }, charged_move: { name: '逆鱗', type: 'dragon' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -211,7 +211,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 149, name: { 'zh-TW': '快龍', en: 'Dragonite', ja: 'カイリュー' }, types: ['dragon', 'flying'], fast_move: { name: '龍之呼吸', type: 'dragon' }, charged_move: { name: '逆鱗', type: 'dragon' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 464, name: { 'zh-TW': '超甲狂犀', en: 'Rhyperior', ja: 'ドサイドン' }, types: ['ground', 'rock'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '岩石炮', type: 'rock' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -241,7 +241,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 530, name: { 'zh-TW': '龍頭地鼠', en: 'Excadrill', ja: 'ドリュウズ' }, types: ['ground', 'steel'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '地震', type: 'ground' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 282, name: { 'zh-TW': '沙奈朵', en: 'Gardevoir', ja: 'サーナイト' }, types: ['psychic', 'fairy'], fast_move: { name: '迷惑', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -271,7 +271,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 635, name: { 'zh-TW': '三頭龍', en: 'Hydreigon', ja: 'サザンドラ' }, types: ['dark', 'dragon'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '暴風', type: 'dark' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 282, name: { 'zh-TW': '沙奈朵', en: 'Gardevoir', ja: 'サーナイト' }, types: ['psychic', 'fairy'], fast_move: { name: '迷惑', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 143, name: { 'zh-TW': '卡比獸', en: 'Snorlax', ja: 'カビゴン' }, types: ['normal'], fast_move: { name: '舌舔', type: 'ghost' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 10.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -301,7 +301,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 534, name: { 'zh-TW': '修繕老頭', en: 'Conkeldurr', ja: 'ローブシン' }, types: ['fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 68, name: { 'zh-TW': '怪力', en: 'Machamp', ja: 'カイリキー' }, types: ['fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 208, name: { 'zh-TW': '大鋼蛇', en: 'Steelix', ja: 'ハガネール' }, types: ['steel', 'ground'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '大地之力', type: 'ground' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -331,7 +331,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 68, name: { 'zh-TW': '怪力', en: 'Machamp', ja: 'カイリキー' }, types: ['fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 6, name: { 'zh-TW': '噴火龍', en: 'Charizard', ja: 'リザードン' }, types: ['fire', 'flying'], fast_move: { name: '火焰旋渦', type: 'fire' }, charged_move: { name: '爆炸燃燒', type: 'fire' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -361,7 +361,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 643, name: { 'zh-TW': '雷希拉姆', en: 'Reshiram', ja: 'レシラム' }, types: ['dragon', 'fire'], fast_move: { name: '火焰牙', type: 'fire' }, charged_move: { name: '過熱', type: 'fire' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '意念頭錘', type: 'psychic' }, charged_move: { name: '精神強念', type: 'psychic' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -395,7 +395,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '意念頭錘', type: 'psychic' }, charged_move: { name: '精神強念', type: 'psychic' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 249, name: { 'zh-TW': '洛奇亞', en: 'Lugia', ja: 'ルギア' }, types: ['psychic', 'flying'], fast_move: { name: '神通力', type: 'psychic' }, charged_move: { name: '預知未來', type: 'psychic' }, dps: 15.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 468, name: { 'zh-TW': '波克基斯', en: 'Togekiss', ja: 'トゲキッス' }, types: ['fairy', 'flying'], fast_move: { name: '迷人', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -425,7 +425,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 257, name: { 'zh-TW': '火焰雞', en: 'Blaziken', ja: 'バシャーモ' }, types: ['fire', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 21.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 475, name: { 'zh-TW': '艾路雷朵', en: 'Gallade', ja: 'エルレイド' }, types: ['psychic', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '近身戰', type: 'fighting' }, dps: 19.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -455,7 +455,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 214, name: { 'zh-TW': '赫拉克羅斯', en: 'Heracross', ja: 'ヘラクロス' }, types: ['bug', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '近身戰', type: 'fighting' }, dps: 20.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 282, name: { 'zh-TW': '沙奈朵', en: 'Gardevoir', ja: 'サーナイト' }, types: ['psychic', 'fairy'], fast_move: { name: '迷惑', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 468, name: { 'zh-TW': '波克基斯', en: 'Togekiss', ja: 'トゲキッス' }, types: ['fairy', 'flying'], fast_move: { name: '迷人', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -489,7 +489,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 254, name: { 'zh-TW': '蜥蜴王', en: 'Sceptile', ja: 'ジュカイン' }, types: ['grass'], fast_move: { name: '種子機關槍', type: 'grass' }, charged_move: { name: '瘋狂植物', type: 'grass' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 445, name: { 'zh-TW': '烈咬陸鯊', en: 'Garchomp', ja: 'ガブリアス' }, types: ['dragon', 'ground'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '地震', type: 'ground' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 208, name: { 'zh-TW': '大鋼蛇', en: 'Steelix', ja: 'ハガネール' }, types: ['steel', 'ground'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '大地之力', type: 'ground' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -519,7 +519,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 473, name: { 'zh-TW': '象牙豬', en: 'Mamoswine', ja: 'マンムー' }, types: ['ice', 'ground'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '高馬力', type: 'ground' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 51, name: { 'zh-TW': '三地鼠', en: 'Dugtrio', ja: 'ダグトリオ' }, types: ['ground'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '地震', type: 'ground' }, dps: 16.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 208, name: { 'zh-TW': '大鋼蛇', en: 'Steelix', ja: 'ハガネール' }, types: ['steel', 'ground'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '大地之力', type: 'ground' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -549,7 +549,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '意念頭錘', type: 'psychic' }, charged_move: { name: '精神強念', type: 'psychic' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 249, name: { 'zh-TW': '洛奇亞', en: 'Lugia', ja: 'ルギア' }, types: ['psychic', 'flying'], fast_move: { name: '神通力', type: 'psychic' }, charged_move: { name: '預知未來', type: 'psychic' }, dps: 14.5, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 468, name: { 'zh-TW': '波克基斯', en: 'Togekiss', ja: 'トゲキッス' }, types: ['fairy', 'flying'], fast_move: { name: '迷人', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -582,7 +582,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 461, name: { 'zh-TW': '瑪狃拉', en: 'Weavile', ja: 'マニューラ' }, types: ['dark', 'ice'], fast_move: { name: '出奇一擊', type: 'dark' }, charged_move: { name: '惡之波動', type: 'dark' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 243, name: { 'zh-TW': '雷公', en: 'Raikou', ja: 'ライコウ' }, types: ['electric'], fast_move: { name: '電擊', type: 'electric' }, charged_move: { name: '狂野伏特', type: 'electric' }, dps: 18.5, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -612,7 +612,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 382, name: { 'zh-TW': '蓋歐卡', en: 'Kyogre', ja: 'カイオーガ' }, types: ['water'], fast_move: { name: '水瀑', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 644, name: { 'zh-TW': '捷克羅姆', en: 'Zekrom', ja: 'ゼクロム' }, types: ['dragon', 'electric'], fast_move: { name: '充電光束', type: 'electric' }, charged_move: { name: '狂野伏特', type: 'electric' }, dps: 18.5, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -642,7 +642,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 639, name: { 'zh-TW': '代拉基翁', en: 'Terrakion', ja: 'テラキオン' }, types: ['rock', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '近身戰', type: 'fighting' }, dps: 19.5, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 282, name: { 'zh-TW': '沙奈朵', en: 'Gardevoir', ja: 'サーナイト' }, types: ['psychic', 'fairy'], fast_move: { name: '迷惑', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 468, name: { 'zh-TW': '波克基斯', en: 'Togekiss', ja: 'トゲキッス' }, types: ['fairy', 'flying'], fast_move: { name: '迷人', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -672,7 +672,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 382, name: { 'zh-TW': '蓋歐卡', en: 'Kyogre', ja: 'カイオーガ' }, types: ['water'], fast_move: { name: '水瀑', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 260, name: { 'zh-TW': '巨沼怪', en: 'Swampert', ja: 'ラグラージ' }, types: ['water', 'ground'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '水砲', type: 'water' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -702,7 +702,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 461, name: { 'zh-TW': '瑪狃拉', en: 'Weavile', ja: 'マニューラ' }, types: ['dark', 'ice'], fast_move: { name: '出奇一擊', type: 'dark' }, charged_move: { name: '惡之波動', type: 'dark' }, dps: 19.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 635, name: { 'zh-TW': '三頭龍', en: 'Hydreigon', ja: 'サザンドラ' }, types: ['dark', 'dragon'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '暴風', type: 'dark' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -732,7 +732,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 530, name: { 'zh-TW': '龍頭地鼠', en: 'Excadrill', ja: 'ドリュウズ' }, types: ['ground', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '鐵頭', type: 'steel' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 483, name: { 'zh-TW': '帝牙盧卡', en: 'Dialga', ja: 'ディアルガ' }, types: ['steel', 'dragon'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '鐵頭', type: 'steel' }, dps: 18.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -762,7 +762,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 248, name: { 'zh-TW': '班基拉斯', en: 'Tyranitar', ja: 'バンギラス' }, types: ['rock', 'dark'], fast_move: { name: '打落', type: 'rock' }, charged_move: { name: '岩崩', type: 'rock' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 473, name: { 'zh-TW': '象牙豬', en: 'Mamoswine', ja: 'マンムー' }, types: ['ice', 'ground'], fast_move: { name: '粉雪', type: 'ice' }, charged_move: { name: '雪崩', type: 'ice' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 468, name: { 'zh-TW': '波克基斯', en: 'Togekiss', ja: 'トゲキッス' }, types: ['fairy', 'flying'], fast_move: { name: '迷人', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -792,7 +792,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '冰之牙', type: 'ice' }, charged_move: { name: '冰凍光束', type: 'ice' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 130, name: { 'zh-TW': '暴鯉龍', en: 'Gyarados', ja: 'ギャラドス' }, types: ['water', 'flying'], fast_move: { name: '水瀑', type: 'water' }, charged_move: { name: '水砲', type: 'water' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 227, name: { 'zh-TW': '盔甲鳥', en: 'Skarmory', ja: 'エアームド' }, types: ['steel', 'flying'], fast_move: { name: '翅膀攻擊', type: 'flying' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 11.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -822,7 +822,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 639, name: { 'zh-TW': '代拉基翁', en: 'Terrakion', ja: 'テラキオン' }, types: ['rock', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '近身戰', type: 'fighting' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 483, name: { 'zh-TW': '帝牙盧卡', en: 'Dialga', ja: 'ディアルガ' }, types: ['steel', 'dragon'], fast_move: { name: '龍息', type: 'dragon' }, charged_move: { name: '流星群', type: 'dragon' }, dps: 18.5, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -852,7 +852,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 250, name: { 'zh-TW': '鳳王', en: 'Ho-Oh', ja: 'ホウオウ' }, types: ['fire', 'flying'], fast_move: { name: '引誘', type: 'fire' }, charged_move: { name: '聖焰', type: 'fire' }, dps: 19.5, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: true, community_day_move: false, role: 'attacker' },
       { pokemon_id: 6, name: { 'zh-TW': '噴火龍', en: 'Charizard', ja: 'リザードン' }, types: ['fire', 'flying'], fast_move: { name: '火焰旋渦', type: 'fire' }, charged_move: { name: '爆炸燃燒', type: 'fire' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   // ---- Mega 團體戰 (6星) ----
@@ -883,7 +883,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 248, name: { 'zh-TW': '班基拉斯', en: 'Tyranitar', ja: 'バンギラス' }, types: ['rock', 'dark'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '殘忍揮擊', type: 'dark' }, dps: 19.5, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 530, name: { 'zh-TW': '龍頭地鼠', en: 'Excadrill', ja: 'ドリュウズ' }, types: ['ground', 'steel'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '地震', type: 'ground' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 143, name: { 'zh-TW': '卡比獸', en: 'Snorlax', ja: 'カビゴン' }, types: ['normal'], fast_move: { name: '舌舔', type: 'ghost' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 10.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -913,7 +913,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '冰之牙', type: 'ice' }, charged_move: { name: '冰凍光束', type: 'ice' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -943,7 +943,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 282, name: { 'zh-TW': '沙奈朵', en: 'Gardevoir', ja: 'サーナイト' }, types: ['psychic', 'fairy'], fast_move: { name: '迷惑', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '冰之牙', type: 'ice' }, charged_move: { name: '冰凍光束', type: 'ice' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -973,7 +973,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 286, name: { 'zh-TW': '斗笠菇', en: 'Breloom', ja: 'キノガッサ' }, types: ['grass', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 22.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 214, name: { 'zh-TW': '赫拉克羅斯', en: 'Heracross', ja: 'ヘラクロス' }, types: ['bug', 'fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '近身戰', type: 'fighting' }, dps: 21.5, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1003,7 +1003,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 445, name: { 'zh-TW': '烈咬陸鯊', en: 'Garchomp', ja: 'ガブリアス' }, types: ['dragon', 'ground'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '大地之力', type: 'ground' }, dps: 20.0, accessibility: 'common', is_shadow: false, is_mega: true, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 635, name: { 'zh-TW': '三頭龍', en: 'Hydreigon', ja: 'サザンドラ' }, types: ['dark', 'dragon'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '暴風', type: 'dark' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   // ---- 3星團體戰 (追加) ----
@@ -1034,7 +1034,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 461, name: { 'zh-TW': '瑪狃拉', en: 'Weavile', ja: 'マニューラ' }, types: ['dark', 'ice'], fast_move: { name: '出奇一擊', type: 'dark' }, charged_move: { name: '惡之波動', type: 'dark' }, dps: 19.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 635, name: { 'zh-TW': '三頭龍', en: 'Hydreigon', ja: 'サザンドラ' }, types: ['dark', 'dragon'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '暴風', type: 'dark' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1064,7 +1064,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 473, name: { 'zh-TW': '象牙豬', en: 'Mamoswine', ja: 'マンムー' }, types: ['ice', 'ground'], fast_move: { name: '粉雪', type: 'ice' }, charged_move: { name: '雪崩', type: 'ice' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 407, name: { 'zh-TW': '羅絲雷朵', en: 'Roserade', ja: 'ロズレイド' }, types: ['grass', 'poison'], fast_move: { name: '毒擊', type: 'poison' }, charged_move: { name: '污泥炸彈', type: 'poison' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1094,7 +1094,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 466, name: { 'zh-TW': '電擊魔獸', en: 'Electivire', ja: 'エレキブル' }, types: ['electric'], fast_move: { name: '電擊', type: 'electric' }, charged_move: { name: '狂野伏特', type: 'electric' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 639, name: { 'zh-TW': '代拉基翁', en: 'Terrakion', ja: 'テラキオン' }, types: ['rock', 'fighting'], fast_move: { name: '打落', type: 'rock' }, charged_move: { name: '岩崩', type: 'rock' }, dps: 18.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 306, name: { 'zh-TW': '波士可多拉', en: 'Aggron', ja: 'ボスゴドラ' }, types: ['steel', 'rock'], fast_move: { name: '鐵尾', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   // ---- 1星團體戰 (追加) ----
@@ -1125,7 +1125,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 68, name: { 'zh-TW': '怪力', en: 'Machamp', ja: 'カイリキー' }, types: ['fighting'], fast_move: { name: '雙倍奉還', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 609, name: { 'zh-TW': '水晶燈火靈', en: 'Chandelure', ja: 'シャンデラ' }, types: ['ghost', 'fire'], fast_move: { name: '火焰旋渦', type: 'fire' }, charged_move: { name: '過熱', type: 'fire' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1155,7 +1155,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 461, name: { 'zh-TW': '瑪狃拉', en: 'Weavile', ja: 'マニューラ' }, types: ['dark', 'ice'], fast_move: { name: '出奇一擊', type: 'dark' }, charged_move: { name: '惡之波動', type: 'dark' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 635, name: { 'zh-TW': '三頭龍', en: 'Hydreigon', ja: 'サザンドラ' }, types: ['dark', 'dragon'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '暴風', type: 'dark' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 143, name: { 'zh-TW': '卡比獸', en: 'Snorlax', ja: 'カビゴン' }, types: ['normal'], fast_move: { name: '舌舔', type: 'ghost' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 10.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1185,7 +1185,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 461, name: { 'zh-TW': '瑪狃拉', en: 'Weavile', ja: 'マニューラ' }, types: ['dark', 'ice'], fast_move: { name: '出奇一擊', type: 'dark' }, charged_move: { name: '惡之波動', type: 'dark' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 635, name: { 'zh-TW': '三頭龍', en: 'Hydreigon', ja: 'サザンドラ' }, types: ['dark', 'dragon'], fast_move: { name: '咬住', type: 'dark' }, charged_move: { name: '暴風', type: 'dark' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   // 極巨化團體戰（Dynamax）— 只能用極巨化寶可夢出戰
@@ -1220,7 +1220,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1250,7 +1250,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -1282,7 +1282,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1313,7 +1313,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1342,7 +1342,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 282, name: { 'zh-TW': '沙奈朵', en: 'Gardevoir', ja: 'サーナイト' }, types: ['psychic', 'fairy'], fast_move: { name: '魅惑之聲', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 18.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -1375,7 +1375,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1404,7 +1404,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 569, name: { 'zh-TW': '灰塵山', en: 'Garbodor', ja: 'ダストダス' }, types: ['poison'], fast_move: { name: '毒針', type: 'poison' }, charged_move: { name: '污泥炸彈', type: 'poison' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 23.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1434,7 +1434,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 17.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1466,7 +1466,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1496,7 +1496,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 834, name: { 'zh-TW': '暴噬龜', en: 'Drednaw', ja: 'カジリガメ' }, types: ['water', 'rock'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '岩崩', type: 'rock' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1528,7 +1528,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1560,7 +1560,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1592,7 +1592,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1621,7 +1621,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 3, name: { 'zh-TW': '妙蛙花', en: 'Venusaur', ja: 'フシギバナ' }, types: ['grass', 'poison'], fast_move: { name: '藤鞭', type: 'grass' }, charged_move: { name: '瘋狂植物', type: 'grass' }, dps: 20.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1651,7 +1651,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 68, name: { 'zh-TW': '怪力', en: 'Machamp', ja: 'カイリキー' }, types: ['fighting'], fast_move: { name: '空手劈', type: 'fighting' }, charged_move: { name: '爆裂拳', type: 'fighting' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1681,7 +1681,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 530, name: { 'zh-TW': '龍頭地鼠', en: 'Excadrill', ja: 'ドリュウズ' }, types: ['ground', 'steel'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '鑽頭衝鋒', type: 'ground' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -1713,7 +1713,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 834, name: { 'zh-TW': '暴噬龜', en: 'Drednaw', ja: 'カジリガメ' }, types: ['water', 'rock'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '岩崩', type: 'rock' }, dps: 20.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1744,7 +1744,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1776,7 +1776,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -1808,7 +1808,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 849, name: { 'zh-TW': '顫弦蠑螈', en: 'Toxtricity', ja: 'ストリンダー' }, types: ['electric', 'poison'], fast_move: { name: '電光', type: 'electric' }, charged_move: { name: '放電', type: 'electric' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1839,7 +1839,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 143, name: { 'zh-TW': '卡比獸', en: 'Snorlax', ja: 'カビゴン' }, types: ['normal'], fast_move: { name: '舌舔', type: 'ghost' }, charged_move: { name: '泰山壓頂', type: 'normal' }, dps: 12.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1867,7 +1867,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 17.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 18.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1897,7 +1897,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 99, name: { 'zh-TW': '大鉗蟹', en: 'Kingler', ja: 'キングラー' }, types: ['water'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '蟹鉗錘', type: 'water' }, dps: 19.5, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1929,7 +1929,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1958,7 +1958,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 21.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -1987,7 +1987,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 858, name: { 'zh-TW': '布莉姆溫', en: 'Hatterene', ja: 'ブリムオン' }, types: ['psychic', 'fairy'], fast_move: { name: '魅惑之聲', type: 'fairy' }, charged_move: { name: '魔法閃耀', type: 'fairy' }, dps: 20.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2018,7 +2018,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2049,7 +2049,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2079,7 +2079,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 849, name: { 'zh-TW': '顫弦蠑螈', en: 'Toxtricity', ja: 'ストリンダー' }, types: ['electric', 'poison'], fast_move: { name: '電光', type: 'electric' }, charged_move: { name: '放電', type: 'electric' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
 
@@ -2113,7 +2113,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 834, name: { 'zh-TW': '暴噬龜', en: 'Drednaw', ja: 'カジリガメ' }, types: ['water', 'rock'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '岩崩', type: 'rock' }, dps: 21.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2144,7 +2144,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2176,7 +2176,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2208,7 +2208,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2240,7 +2240,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2270,7 +2270,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 530, name: { 'zh-TW': '龍頭地鼠', en: 'Excadrill', ja: 'ドリュウズ' }, types: ['ground', 'steel'], fast_move: { name: '泥巴射擊', type: 'ground' }, charged_move: { name: '鑽頭衝鋒', type: 'ground' }, dps: 16.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2300,7 +2300,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 65, name: { 'zh-TW': '胡地', en: 'Alakazam', ja: 'フーディン' }, types: ['psychic'], fast_move: { name: '念動力切', type: 'psychic' }, charged_move: { name: '精神強念', type: 'psychic' }, dps: 19.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2331,7 +2331,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2362,7 +2362,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2391,7 +2391,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 879, name: { 'zh-TW': '大王銅象', en: 'Copperajah', ja: 'ダイオウドウ' }, types: ['steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '加農光砲', type: 'steel' }, dps: 20.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 569, name: { 'zh-TW': '灰塵山', en: 'Garbodor', ja: 'ダストダス' }, types: ['poison'], fast_move: { name: '毒針', type: 'poison' }, charged_move: { name: '污泥炸彈', type: 'poison' }, dps: 18.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2423,7 +2423,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2455,7 +2455,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2487,7 +2487,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2519,7 +2519,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 823, name: { 'zh-TW': '鋼鎧鴉', en: 'Corviknight', ja: 'アーマーガア' }, types: ['flying', 'steel'], fast_move: { name: '撥沙', type: 'ground' }, charged_move: { name: '勇鳥猛攻', type: 'flying' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2550,7 +2550,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
       { pokemon_id: 889, name: { 'zh-TW': '藏瑪然特', en: 'Zamazenta', ja: 'ザマゼンタ' }, types: ['fighting', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪盾', type: 'steel' }, dps: 19.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 888, name: { 'zh-TW': '蒼響', en: 'Zacian', ja: 'ザシアン' }, types: ['fairy', 'steel'], fast_move: { name: '金屬爪', type: 'steel' }, charged_move: { name: '豪劍', type: 'steel' }, dps: 22.0, accessibility: 'legendary', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   {
@@ -2580,7 +2580,7 @@ export const bosses: Boss[] = [
       { pokemon_id: 139, name: { 'zh-TW': '多刺菊石獸', en: 'Omastar', ja: 'オムスター' }, types: ['rock', 'water'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '岩崩', type: 'rock' }, dps: 20.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'attacker' },
       { pokemon_id: 131, name: { 'zh-TW': '拉普拉斯', en: 'Lapras', ja: 'ラプラス' }, types: ['water', 'ice'], fast_move: { name: '水槍', type: 'water' }, charged_move: { name: '衝浪', type: 'water' }, dps: 13.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
       { pokemon_id: 376, name: { 'zh-TW': '巨金怪', en: 'Metagross', ja: 'メタグロス' }, types: ['steel', 'psychic'], fast_move: { name: '子彈拳', type: 'steel' }, charged_move: { name: '彗星拳', type: 'steel' }, dps: 15.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: true, role: 'tank' },
-      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 8.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'healer' },
+      { pokemon_id: 242, name: { 'zh-TW': '幸福蛋', en: 'Blissey', ja: 'ハピナス' }, types: ['normal'], fast_move: { name: '拍擊', type: 'normal' }, charged_move: { name: '破壞光線', type: 'normal' }, dps: 14.0, accessibility: 'common', is_shadow: false, is_mega: false, elite_tm_required: false, community_day_move: false, role: 'tank' },
     ],
   },
   // ============================================================
