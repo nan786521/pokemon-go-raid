@@ -80,11 +80,14 @@ export const CounterItem = memo(function CounterItem({ counter, rank, compact }:
           )}
         </div>
 
-        {/* Moves */}
-        <div className="mt-0.5 flex flex-wrap items-center gap-1 text-xs text-gray-600 dark:text-gray-300">
+        {/* Moves - each on its own line */}
+        <div className="mt-0.5 flex items-center gap-1 text-xs text-gray-600 dark:text-gray-300">
+          <span className="text-[10px] text-gray-400">快招</span>
           <TypeBadge type={counter.fast_move.type} size="sm" />
           <span>{counter.fast_move.name}</span>
-          <span className="text-gray-400">/</span>
+        </div>
+        <div className="flex items-center gap-1 text-xs text-gray-600 dark:text-gray-300">
+          <span className="text-[10px] text-gray-400">蓄力</span>
           <TypeBadge type={counter.charged_move.type} size="sm" />
           <span>{counter.charged_move.name}</span>
           {counter.elite_tm_required && (
