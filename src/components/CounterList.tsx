@@ -16,18 +16,30 @@ export const CounterList = memo(function CounterList({ counters, category }: Pro
     healers: counters.filter(c => c.role === 'healer').sort((a, b) => b.dps - a.dps),
   }), [counters]);
 
-  const team = useMemo(
-    () => isRaid ? [...attackers] : [...attackers, ...tanks, ...healers],
-    [isRaid, attackers, tanks, healers]
-  );
+  const team = useMemo(() => {
+    if (isRaid) {
+      // 道館：前 6 名打手
+      return attackers.slice(0, 6);
+    }
+    // 極巨化/超極巨：2 坦 + 1 打手
+    const picked: Counter[] = [];
+    picked.push(...tanks.slice(0, 2));
+    picked.push(...attackers.slice(0, 1));
+    return picked;
+  }, [isRaid, attackers, tanks]);
 
   const teamLabel = useMemo(() => {
+    if (isRaid) {
+      const n = Math.min(attackers.length, 6);
+      return n > 0 ? `${n}打` : '';
+    }
+    const tCount = Math.min(tanks.length, 2);
+    const aCount = Math.min(attackers.length, 1);
     const parts = [];
-    if (attackers.length > 0) parts.push(`${attackers.length}打`);
-    if (!isRaid && tanks.length > 0) parts.push(`${tanks.length}坦`);
-    if (!isRaid && healers.length > 0) parts.push(`${healers.length}補`);
+    if (tCount > 0) parts.push(`${tCount}坦`);
+    if (aCount > 0) parts.push(`${aCount}打`);
     return parts.join(' + ');
-  }, [attackers.length, tanks.length, healers.length, isRaid]);
+  }, [attackers.length, tanks.length, isRaid]);
 
   return (
     <div className="flex flex-col gap-2 p-3 pt-0">
@@ -38,7 +50,7 @@ export const CounterList = memo(function CounterList({ counters, category }: Pro
             <span>推薦隊伍組合</span>
             <span className="ml-auto font-normal text-amber-300">{teamLabel}</span>
           </div>
-          <div className="grid grid-cols-2 gap-1.5">
+          <div className={`grid gap-1.5 ${isRaid ? 'grid-cols-2' : 'grid-cols-3'}`}>
             {team.map(c => (
               <CounterItem key={`team-${c.pokemon_id}-${c.role}`} counter={c} compact />
             ))}
