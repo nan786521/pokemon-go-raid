@@ -24,10 +24,14 @@
 
     <!-- Apple -->
     <link rel="apple-touch-icon" href="/pokemon-go-raid/pwa-192x192.png" />
-    <script type="module" crossorigin src="/pokemon-go-raid/assets/index-C_9vJzQG.js"></script>
-    <link rel="stylesheet" crossorigin href="/pokemon-go-raid/assets/index-DvEzikr6.css">
+
+    <!-- Preload critical sprites -->
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin />
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
+    <script type="module" crossorigin src="/pokemon-go-raid/assets/index-CzP9fwyX.js"></script>
+    <link rel="stylesheet" crossorigin href="/pokemon-go-raid/assets/index-DTvJWGXl.css">
   <link rel="manifest" href="/pokemon-go-raid/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/pokemon-go-raid/registerSW.js"></script></head>
-  <body>
+  <body class="dark bg-gray-900">
     <div id="root"></div>
   </body>
 </html>
