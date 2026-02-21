@@ -66,7 +66,7 @@ export function BottomSheet({ boss, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-label={boss.name['zh-TW']}
-        className={`absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-gray-900 shadow-2xl transition-transform duration-300 ease-out ${
+        className={`absolute bottom-0 left-1/2 w-full max-w-lg -translate-x-1/2 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-gray-900 shadow-2xl transition-transform duration-300 ease-out ${
           visible ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
@@ -85,12 +85,12 @@ export function BottomSheet({ boss, onClose }: Props) {
         </button>
 
         {/* Boss header */}
-        <div className="flex items-start gap-3 px-4 pb-3">
-          <div className="relative h-20 w-20 shrink-0">
+        <div className="flex items-start gap-4 px-4 pb-3">
+          <div className="relative h-28 w-28 shrink-0">
             <img
               src={imgError ? getSpriteUrl(boss.pokemon_id) : getOfficialArtUrl(boss.pokemon_id)}
               alt={boss.name['zh-TW']}
-              className="h-20 w-20 object-contain"
+              className="h-28 w-28 object-contain"
               onError={() => setImgError(true)}
             />
             {boss.current && (
