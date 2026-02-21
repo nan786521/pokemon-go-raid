@@ -1,0 +1,1 @@
+import{r as a,j as e}from"./index-DCP6qEV3.js";const p=a.memo(function({label:r,rating:t,max:s=5}){return e.jsxs("span",{className:"text-gray-300","aria-label":`${r} ${t}/${s}`,children:[r," ","★".repeat(t),"☆".repeat(s-t)]})});export{p as R};
