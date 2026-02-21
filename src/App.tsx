@@ -106,19 +106,20 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
       <Header query={query} onQueryChange={setQuery} />
+      <TabBar active={activeTab} onChange={setActiveTab} />
 
       {/* Filters */}
-      <div className="sticky top-[52px] z-20 space-y-2 bg-gray-50/90 px-3 py-2 backdrop-blur dark:bg-gray-900/90">
+      <div className="sticky top-[52px] z-20 space-y-2 bg-gray-900/90 px-3 py-2 backdrop-blur lg:top-[96px]">
         <div className="flex items-center gap-2">
           {/* Current only toggle */}
           {currentBosses.length > 0 && (
             <button
               onClick={() => setCurrentOnly(v => !v)}
               aria-pressed={currentOnly}
-              className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium transition ${
+              className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition ${
                 currentOnly
                   ? 'bg-green-500 text-white shadow-sm'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
               }`}
             >
               {currentOnly ? '● 當前輪替' : '○ 當前輪替'}
@@ -132,7 +133,7 @@ function App() {
       </div>
 
       {/* Main content */}
-      <main className="mx-auto max-w-5xl px-3 pb-24" ref={listRef}>
+      <main className="mx-auto max-w-5xl px-3 pb-24 lg:pb-6" ref={listRef}>
         {/* Current boss banner */}
         {activeTab === 'all' && !query && !currentOnly && (
           <div className="mb-4">
@@ -162,7 +163,6 @@ function App() {
         )}
       </main>
 
-      <TabBar active={activeTab} onChange={setActiveTab} />
       <BottomSheet boss={selectedBoss} onClose={() => setSelectedBoss(null)} />
     </div>
   );

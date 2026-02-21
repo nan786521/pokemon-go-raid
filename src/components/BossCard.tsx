@@ -23,7 +23,7 @@ function Countdown({ end }: { end: string }) {
   if (diff <= 0) return <span className="text-xs text-red-400">已結束</span>;
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  return <span className="text-xs text-emerald-500">剩餘 {days}天{hours}時</span>;
+  return <span className="text-xs font-medium text-emerald-400">剩餘 {days}天{hours}時</span>;
 }
 
 export const BossCard = memo(function BossCard({ boss, onSelect }: Props) {
@@ -32,16 +32,16 @@ export const BossCard = memo(function BossCard({ boss, onSelect }: Props) {
   return (
     <button
       onClick={() => onSelect(boss)}
-      className="w-full overflow-hidden rounded-xl border border-gray-200 bg-white text-left shadow-sm transition-colors hover:bg-gray-50 active:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-750 dark:active:bg-gray-700"
+      className="w-full overflow-hidden rounded-xl border border-gray-700 bg-gray-800 text-left shadow-sm transition hover:bg-gray-750 hover:shadow-md active:bg-gray-700"
     >
-      <div className="flex items-start gap-3 p-3">
+      <div className="flex items-start gap-3 p-3 lg:gap-4 lg:p-4">
         {/* Pokemon Image */}
-        <div className="relative h-16 w-16 shrink-0">
+        <div className="relative h-16 w-16 shrink-0 lg:h-20 lg:w-20">
           <img
             src={imgError ? getSpriteUrl(boss.pokemon_id) : getOfficialArtUrl(boss.pokemon_id)}
             alt={boss.name['zh-TW']}
             loading="lazy"
-            className="h-16 w-16 object-contain"
+            className="h-16 w-16 object-contain lg:h-20 lg:w-20"
             onError={() => setImgError(true)}
           />
           {boss.current && (

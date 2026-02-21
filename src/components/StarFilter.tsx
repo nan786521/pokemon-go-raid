@@ -16,10 +16,10 @@ export function StarFilter({ selected, onChange, availableTiers }: Props) {
       <button
         onClick={() => onChange(null)}
         aria-pressed={selected === null}
-        className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+        className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
           selected === null
             ? 'bg-red-500 text-white shadow-sm'
-            : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
+            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
         }`}
       >
         全部
@@ -30,10 +30,10 @@ export function StarFilter({ selected, onChange, availableTiers }: Props) {
           onClick={() => onChange(selected === t ? null : t)}
           aria-pressed={selected === t}
           aria-label={`${t}星`}
-          className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+          className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
             selected === t
               ? 'bg-yellow-500 text-white shadow-sm'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
           {'★'.repeat(t)}

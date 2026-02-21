@@ -21,11 +21,9 @@ export function BottomSheet({ boss, onClose }: Props) {
   const [imgError, setImgError] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // Animate in when boss changes
   useEffect(() => {
     if (boss) {
       setImgError(false);
-      // Trigger slide-up on next frame
       requestAnimationFrame(() => setVisible(true));
       document.body.style.overflow = 'hidden';
     } else {
@@ -35,7 +33,6 @@ export function BottomSheet({ boss, onClose }: Props) {
     return () => { document.body.style.overflow = ''; };
   }, [boss]);
 
-  // Close on Escape
   useEffect(() => {
     if (!boss) return;
     function onKey(e: KeyboardEvent) {
@@ -47,7 +44,7 @@ export function BottomSheet({ boss, onClose }: Props) {
 
   function handleClose() {
     setVisible(false);
-    setTimeout(onClose, 300); // Wait for slide-down animation
+    setTimeout(onClose, 300);
   }
 
   if (!boss) return null;
@@ -60,29 +57,42 @@ export function BottomSheet({ boss, onClose }: Props) {
         onClick={handleClose}
       />
 
-      {/* Panel */}
+      {/* Panel: bottom sheet on mobile/tablet, right sidebar on desktop */}
       <div
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-label={boss.name['zh-TW']}
-        className={`absolute bottom-0 left-1/2 w-full max-w-lg -translate-x-1/2 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-gray-900 shadow-2xl transition-transform duration-300 ease-out ${
-          visible ? 'translate-y-0' : 'translate-y-full'
-        }`}
+        className={[
+          'absolute overflow-y-auto bg-gray-900 shadow-2xl transition-transform duration-300 ease-out',
+          // Mobile: bottom sheet
+          'inset-x-0 bottom-0 max-h-[85vh] rounded-t-2xl',
+          // Tablet: wider bottom sheet
+          'md:left-1/2 md:right-auto md:w-full md:max-w-2xl md:-translate-x-1/2',
+          // Desktop: right sidebar
+          'lg:inset-y-0 lg:left-auto lg:right-0 lg:bottom-auto lg:w-[28rem] lg:max-w-none lg:max-h-none lg:translate-x-0 lg:-translate-x-0 lg:rounded-t-none lg:rounded-l-2xl',
+          // Animation
+          visible
+            ? 'translate-y-0 lg:translate-x-0'
+            : 'translate-y-full lg:translate-y-0 lg:translate-x-full',
+        ].join(' ')}
       >
-        {/* Drag handle */}
-        <div className="sticky top-0 z-10 flex justify-center bg-gray-900 pt-3 pb-2">
+        {/* Drag handle - mobile/tablet only */}
+        <div className="sticky top-0 z-10 flex justify-center bg-gray-900 pt-3 pb-2 lg:hidden">
           <div className="h-1 w-10 rounded-full bg-gray-600" />
         </div>
 
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="absolute top-2 right-3 flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-800 hover:text-white"
+          className="absolute top-3 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full text-lg text-gray-400 transition hover:bg-gray-800 hover:text-white"
           aria-label="關閉"
         >
           ✕
         </button>
+
+        {/* Desktop top padding */}
+        <div className="hidden lg:block lg:h-4" />
 
         {/* Boss header */}
         <div className="flex items-start gap-4 px-4 pb-3">
