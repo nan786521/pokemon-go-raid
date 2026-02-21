@@ -24,8 +24,12 @@
 
     <!-- Apple -->
     <link rel="apple-touch-icon" href="/pokemon-go-raid/pwa-192x192.png" />
+
+    <!-- Preload critical sprites -->
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin />
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
   </head>
-  <body>
+  <body class="dark bg-gray-900">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

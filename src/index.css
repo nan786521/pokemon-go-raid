@@ -11,3 +11,23 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Install prompt slide-up animation */
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Focus visible ring for keyboard users */
+:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
