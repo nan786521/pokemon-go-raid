@@ -87,13 +87,13 @@ def pick_tank(boss_types, boss_pid, used_pids):
 
 
 def process_counters(counter_lines, boss_types, boss_pid, boss_id):
-    """Restructure counters: top 4 attackers + 1 tank + 1 healer = 6."""
+    """Restructure counters: top 6 attackers + 1 tank + 1 healer = 8."""
     # Parse and sort by DPS descending
     parsed = [(line, get_dps(line), get_pid(line)) for line in counter_lines]
     parsed.sort(key=lambda x: -x[1])
 
-    # Take top 4 as attackers
-    attackers = parsed[:4]
+    # Take top 6 as attackers
+    attackers = parsed[:6]
     used_pids = {pid for _, _, pid in attackers}
 
     result = []
@@ -108,8 +108,8 @@ def process_counters(counter_lines, boss_types, boss_pid, boss_id):
     # Add Blissey healer
     result.append(BLISSEY_LINE)
 
-    print(f"  {boss_id}: {len(counter_lines)} -> 6 counters "
-          f"(4 atk + tank={tank_id} + Blissey)")
+    print(f"  {boss_id}: {len(counter_lines)} -> 8 counters "
+          f"(6 atk + tank={tank_id} + Blissey)")
     return result
 
 
