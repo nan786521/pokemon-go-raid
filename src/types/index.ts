@@ -9,6 +9,8 @@ export type Category = 'dynamax' | 'gigantamax' | 'raid';
 
 export type Accessibility = 'legendary' | 'common' | 'mega';
 
+export type CounterRole = 'attacker' | 'tank' | 'healer';
+
 export interface LocalizedName {
   'zh-TW': string;
   en: string;
@@ -32,6 +34,7 @@ export interface Counter {
   is_mega: boolean;
   elite_tm_required: boolean;
   community_day_move: boolean;
+  role?: CounterRole;
 }
 
 export interface Boss {
