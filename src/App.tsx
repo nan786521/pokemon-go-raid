@@ -3,6 +3,7 @@ import type { Boss, Category, PokemonType } from './types';
 import { bosses } from './data/bosses';
 import { matchesBoss } from './utils/search';
 import { RECOMMEND_ORDER } from './utils/recommend';
+import { TYPE_COLORS } from './utils/typeColors';
 import { Header } from './components/Header';
 import { TabBar } from './components/TabBar';
 import { StarFilter } from './components/StarFilter';
@@ -31,24 +32,27 @@ function getParams() {
   const p = new URLSearchParams(location.hash.slice(1));
   const tab = p.get('tab') || 'all';
   const sort = p.get('sort') || 'recommend';
+  const fm = p.get('fm') || 'type';
   return {
     tab: (VALID_TABS.has(tab) ? tab : 'all') as Category | 'all',
     star: p.get('star') ? Number(p.get('star')) : null,
-    type: (p.get('type') || null) as PokemonType | null,
+    types: (p.get('type') || '').split(',').filter(Boolean) as PokemonType[],
     q: p.get('q') || '',
     current: p.get('current') === '1',
     sort: (VALID_SORTS.has(sort) ? sort : 'recommend') as SortKey,
+    fm: (fm === 'weakness' ? 'weakness' : 'type') as 'type' | 'weakness',
   };
 }
 
-function setParams(state: { tab: string; star: number | null; type: string | null; q: string; current: boolean; sort: string }) {
+function setParams(state: { tab: string; star: number | null; types: string[]; q: string; current: boolean; sort: string; fm: string }) {
   const p = new URLSearchParams();
   if (state.tab !== 'all') p.set('tab', state.tab);
   if (state.star !== null) p.set('star', String(state.star));
-  if (state.type) p.set('type', state.type);
+  if (state.types.length > 0) p.set('type', state.types.join(','));
   if (state.q) p.set('q', state.q);
   if (state.current) p.set('current', '1');
   if (state.sort !== 'recommend') p.set('sort', state.sort);
+  if (state.fm !== 'type') p.set('fm', state.fm);
   const hash = p.toString();
   history.replaceState(null, '', hash ? `#${hash}` : location.pathname);
 }
@@ -67,7 +71,8 @@ function App() {
   const init = getParams();
   const [activeTab, setActiveTab] = useState<Category | 'all'>(init.tab);
   const [starFilter, setStarFilter] = useState<number | null>(init.star);
-  const [typeFilter, setTypeFilter] = useState<PokemonType | null>(init.type);
+  const [typeFilters, setTypeFilters] = useState<PokemonType[]>(init.types);
+  const [filterMode, setFilterMode] = useState<'type' | 'weakness'>(init.fm);
   const [query, setQuery] = useState(init.q);
   const [currentOnly, setCurrentOnly] = useState(init.current);
   const [sortKey, setSortKey] = useState<SortKey>(init.sort);
@@ -83,8 +88,8 @@ function App() {
 
   // Sync state → URL
   useEffect(() => {
-    setParams({ tab: activeTab, star: starFilter, type: typeFilter, q: query, current: currentOnly, sort: sortKey });
-  }, [activeTab, starFilter, typeFilter, query, currentOnly, sortKey]);
+    setParams({ tab: activeTab, star: starFilter, types: typeFilters, q: query, current: currentOnly, sort: sortKey, fm: filterMode });
+  }, [activeTab, starFilter, typeFilters, query, currentOnly, sortKey, filterMode]);
 
   // Dynamic document title
   useEffect(() => {
@@ -102,14 +107,30 @@ function App() {
     return [...new Set(filtered.map(b => b.tier))];
   }, [activeTab]);
 
-  // Filtered + sorted boss list (depends on favorites for sort order)
+  const hasActiveFilters = starFilter !== null || typeFilters.length > 0 || currentOnly || query !== '';
+
+  const clearAllFilters = useCallback(() => {
+    setStarFilter(null);
+    setTypeFilters([]);
+    setFilterMode('type');
+    setCurrentOnly(false);
+    setQuery('');
+  }, []);
+
+  // Filtered + sorted boss list
   const filtered = useMemo(() => {
     let list = [...bosses];
 
     if (activeTab !== 'all') list = list.filter(b => b.category === activeTab);
     if (currentOnly) list = list.filter(b => b.current);
     if (starFilter !== null) list = list.filter(b => b.tier === starFilter);
-    if (typeFilter !== null) list = list.filter(b => b.types.includes(typeFilter));
+    if (typeFilters.length > 0) {
+      list = list.filter(b =>
+        filterMode === 'weakness'
+          ? typeFilters.some(t => b.weaknesses.includes(t))
+          : typeFilters.some(t => b.types.includes(t))
+      );
+    }
     if (query) list = list.filter(b => matchesBoss(b, query));
 
     list.sort((a, b) => {
@@ -132,7 +153,7 @@ function App() {
     });
 
     return list;
-  }, [activeTab, starFilter, typeFilter, query, currentOnly, sortKey, favorites]);
+  }, [activeTab, starFilter, typeFilters, filterMode, query, currentOnly, sortKey, favorites]);
 
   const scrollToBoss = useCallback((bossId: string) => {
     const el = document.getElementById(`boss-${bossId}`);
@@ -192,7 +213,12 @@ function App() {
             <SortDropdown value={sortKey} onChange={setSortKey} />
           </div>
         </div>
-        <TypeFilter selected={typeFilter} onChange={setTypeFilter} />
+        <TypeFilter
+          selected={typeFilters}
+          onChange={setTypeFilters}
+          mode={filterMode}
+          onModeChange={setFilterMode}
+        />
       </div>
 
       {/* Mobile tool buttons */}
@@ -217,9 +243,55 @@ function App() {
 
       {/* Main content */}
       <main className="mx-auto max-w-5xl px-3 pb-24 lg:pb-6" ref={listRef}>
-        {activeTab === 'all' && !query && !currentOnly && (
+        {activeTab === 'all' && !query && !currentOnly && typeFilters.length === 0 && (
           <div className="mb-4 mt-2">
             <CurrentBossBanner bosses={currentBosses} onSelect={scrollToBoss} />
+          </div>
+        )}
+
+        {/* Active filter chips */}
+        {hasActiveFilters && (
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            {currentOnly && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-green-500/20 px-2.5 py-1 text-xs text-green-300">
+                當前輪替
+                <button onClick={() => setCurrentOnly(false)} className="ml-0.5 opacity-70 hover:opacity-100" aria-label="移除當前輪替篩選">✕</button>
+              </span>
+            )}
+            {starFilter !== null && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-yellow-500/20 px-2.5 py-1 text-xs text-yellow-300">
+                {'★'.repeat(starFilter)}
+                <button onClick={() => setStarFilter(null)} className="ml-0.5 opacity-70 hover:opacity-100" aria-label="移除星級篩選">✕</button>
+              </span>
+            )}
+            {typeFilters.length > 0 && filterMode === 'weakness' && (
+              <span className="inline-flex items-center rounded-full bg-purple-500/20 px-2.5 py-1 text-xs text-purple-300">
+                弱點模式
+              </span>
+            )}
+            {typeFilters.map(t => (
+              <span
+                key={t}
+                className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium"
+                style={{ backgroundColor: `${TYPE_COLORS[t].bg}30`, color: TYPE_COLORS[t].bg }}
+              >
+                {TYPE_COLORS[t].label}
+                <button
+                  onClick={() => setTypeFilters(f => f.filter(x => x !== t))}
+                  className="ml-0.5 opacity-70 hover:opacity-100"
+                  aria-label={`移除${TYPE_COLORS[t].label}篩選`}
+                >✕</button>
+              </span>
+            ))}
+            {query && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-gray-700 px-2.5 py-1 text-xs text-gray-300">
+                搜尋: {query}
+                <button onClick={() => setQuery('')} className="ml-0.5 opacity-70 hover:opacity-100" aria-label="清除搜尋">✕</button>
+              </span>
+            )}
+            <button onClick={clearAllFilters} className="ml-1 text-xs text-gray-500 transition hover:text-red-400">
+              清除全部
+            </button>
           </div>
         )}
 
