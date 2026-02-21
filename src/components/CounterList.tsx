@@ -10,11 +10,17 @@ export function CounterList({ counters }: Props) {
   const tanks = counters.filter(c => c.role === 'tank').sort((a, b) => b.dps - a.dps);
   const healers = counters.filter(c => c.role === 'healer').sort((a, b) => b.dps - a.dps);
 
-  // Build recommended team: 2 tanks + 1 best attacker (+ healer if available)
-  const teamTanks = tanks.slice(0, 2);
-  const teamAttacker = attackers[0];
-  const teamHealer = healers[0];
-  const hasTeam = teamTanks.length >= 1 && teamAttacker;
+  // Build recommended team: all 6 counters (attackers + tanks + healers)
+  const team = [...attackers, ...tanks, ...healers];
+  const hasTeam = team.length > 0;
+  const atkCount = attackers.length;
+  const tankCount = tanks.length;
+  const healCount = healers.length;
+  const teamLabel = [
+    atkCount > 0 ? `${atkCount}打` : '',
+    tankCount > 0 ? `${tankCount}坦` : '',
+    healCount > 0 ? `${healCount}補` : '',
+  ].filter(Boolean).join(' + ');
 
   return (
     <div className="flex flex-col gap-2 p-3 pt-0">
@@ -25,17 +31,13 @@ export function CounterList({ counters }: Props) {
             <span>⚔</span>
             <span>推薦隊伍組合</span>
             <span className="ml-auto font-normal text-amber-700 dark:text-amber-300">
-              {teamTanks.length}坦 + 1打{teamHealer ? ' + 1補' : ''}
+              {teamLabel}
             </span>
           </div>
           <div className="grid grid-cols-2 gap-1.5">
-            {teamTanks.map(c => (
-              <CounterItem key={`team-${c.pokemon_id}`} counter={c} compact />
+            {team.map(c => (
+              <CounterItem key={`team-${c.pokemon_id}-${c.role}`} counter={c} compact />
             ))}
-            <CounterItem key={`team-${teamAttacker.pokemon_id}`} counter={teamAttacker} compact />
-            {teamHealer && (
-              <CounterItem key={`team-${teamHealer.pokemon_id}`} counter={teamHealer} compact />
-            )}
           </div>
         </div>
       )}
