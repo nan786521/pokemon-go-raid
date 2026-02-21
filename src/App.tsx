@@ -25,7 +25,7 @@ const CompareModal = lazy(() => import('./components/CompareModal').then(m => ({
 const RaidEstimator = lazy(() => import('./components/RaidEstimator').then(m => ({ default: m.RaidEstimator })));
 
 // Valid values for URL params
-const VALID_TABS = new Set<string>(['all', 'raid', 'dynamax', 'gigantamax']);
+const VALID_TABS = new Set<string>(['all', 'raid', 'shadow', 'dynamax', 'gigantamax']);
 const VALID_SORTS = new Set<string>(['recommend', 'cp-desc', 'cp-asc', 'tier-desc', 'name']);
 
 function getParams() {
@@ -206,7 +206,7 @@ function App() {
               {currentOnly ? '● 當前輪替' : '○ 當前輪替'}
             </button>
           )}
-          {activeTab === 'raid' && (
+          {(activeTab === 'raid' || activeTab === 'shadow') && (
             <StarFilter selected={starFilter} onChange={setStarFilter} availableTiers={availableTiers} />
           )}
           <div className="ml-auto">

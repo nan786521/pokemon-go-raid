@@ -9,6 +9,7 @@ interface Props {
 const tabs: { key: Category | 'all'; label: string; icon: string }[] = [
   { key: 'all',        label: '全部',   icon: '🏠' },
   { key: 'raid',       label: '道館',   icon: '⭐' },
+  { key: 'shadow',     label: '暗影',   icon: '👤' },
   { key: 'dynamax',    label: '極巨化', icon: '🔴' },
   { key: 'gigantamax', label: '超極巨', icon: '💎' },
 ];

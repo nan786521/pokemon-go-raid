@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const CounterList = memo(function CounterList({ counters, category }: Props) {
-  const isRaid = category === 'raid';
+  const isRaid = category === 'raid' || category === 'shadow';
 
   const { attackers, tanks, healers } = useMemo(() => ({
     attackers: counters.filter(c => c.role === 'attacker').sort((a, b) => b.dps - a.dps),

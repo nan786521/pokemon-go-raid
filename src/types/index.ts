@@ -5,7 +5,7 @@ export type PokemonType =
 
 export type Recommendation = 'SSS' | 'SS' | 'S' | 'A' | 'B';
 
-export type Category = 'dynamax' | 'gigantamax' | 'raid';
+export type Category = 'raid' | 'shadow' | 'dynamax' | 'gigantamax';
 
 export type Accessibility = 'legendary' | 'common' | 'mega';
 
