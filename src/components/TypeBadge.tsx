@@ -14,7 +14,6 @@ export const TypeBadge = memo(function TypeBadge({ type, size = 'md' }: Props) {
     <span
       className={`type-badge inline-block rounded-full font-bold ${cls}`}
       style={{ backgroundColor: info.bg, color: info.text }}
-      role="img"
       aria-label={`${info.label}屬性`}
     >
       {info.label}

@@ -7,11 +7,16 @@ interface Props {
   onClose: () => void;
 }
 
+// Difficulty estimation constants
+const DIFFICULTY_PER_TIER = 10;     // Base difficulty score per tier
+const POWER_PER_TRAINER = 15;       // Power contribution per trainer at max level
+const MAX_TRAINER_LEVEL = 40;       // Reference level for normalization
+const DYNAMAX_TIER_EQUIVALENT = 6;  // Treat non-numeric tiers as tier 6
+
 function estimateDifficulty(boss: Boss, trainers: number, avgLevel: number): { canWin: boolean; difficulty: string; cls: string } {
-  // Simple estimation model based on tier, trainers, and level
-  const tier = typeof boss.tier === 'number' ? boss.tier : 6;
-  const requiredPower = tier * 10; // base difficulty score
-  const teamPower = trainers * (avgLevel / 40) * 15; // team power
+  const tier = typeof boss.tier === 'number' ? boss.tier : DYNAMAX_TIER_EQUIVALENT;
+  const requiredPower = tier * DIFFICULTY_PER_TIER;
+  const teamPower = Math.max(1, trainers) * (Math.min(50, Math.max(1, avgLevel)) / MAX_TRAINER_LEVEL) * POWER_PER_TRAINER;
 
   const ratio = teamPower / requiredPower;
   if (ratio >= 2) return { canWin: true, difficulty: '輕鬆', cls: 'text-green-400' };

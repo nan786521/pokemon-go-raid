@@ -18,7 +18,7 @@ export function Header({ query, onQueryChange, allBosses, onSelectBoss, onOpenCa
   const [local, setLocal] = useState(query);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { setLocal(query); }, [query]);
 
@@ -42,7 +42,7 @@ export function Header({ query, onQueryChange, allBosses, onSelectBoss, onOpenCa
   useEffect(() => {
     if (!showSuggestions) return;
     function handleClick(e: MouseEvent) {
-      if (inputRef.current && !inputRef.current.parentElement?.contains(e.target as Node)) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
         setShowSuggestions(false);
       }
     }
@@ -63,7 +63,7 @@ export function Header({ query, onQueryChange, allBosses, onSelectBoss, onOpenCa
         </h1>
 
         {/* Search */}
-        <div className="relative flex-1 lg:max-w-md" ref={inputRef}>
+        <div className="relative flex-1 lg:max-w-md" ref={wrapperRef}>
           <input
             type="search"
             value={local}

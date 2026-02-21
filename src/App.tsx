@@ -23,16 +23,21 @@ const RaidCalendar = lazy(() => import('./components/RaidCalendar').then(m => ({
 const CompareModal = lazy(() => import('./components/CompareModal').then(m => ({ default: m.CompareModal })));
 const RaidEstimator = lazy(() => import('./components/RaidEstimator').then(m => ({ default: m.RaidEstimator })));
 
-// --- URL query param helpers ---
+// Valid values for URL params
+const VALID_TABS = new Set<string>(['all', 'raid', 'dynamax', 'gigantamax']);
+const VALID_SORTS = new Set<string>(['recommend', 'cp-desc', 'cp-asc', 'tier-desc', 'name']);
+
 function getParams() {
   const p = new URLSearchParams(location.hash.slice(1));
+  const tab = p.get('tab') || 'all';
+  const sort = p.get('sort') || 'recommend';
   return {
-    tab: (p.get('tab') || 'all') as Category | 'all',
+    tab: (VALID_TABS.has(tab) ? tab : 'all') as Category | 'all',
     star: p.get('star') ? Number(p.get('star')) : null,
     type: (p.get('type') || null) as PokemonType | null,
     q: p.get('q') || '',
     current: p.get('current') === '1',
-    sort: (p.get('sort') || 'recommend') as SortKey,
+    sort: (VALID_SORTS.has(sort) ? sort : 'recommend') as SortKey,
   };
 }
 
@@ -48,8 +53,16 @@ function setParams(state: { tab: string; star: number | null; type: string | nul
   history.replaceState(null, '', hash ? `#${hash}` : location.pathname);
 }
 
+// Loading fallback for lazy-loaded modals
+function LoadingOverlay() {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-600 border-t-red-500" />
+    </div>
+  );
+}
+
 function App() {
-  // Always dark mode
   useEffect(() => { document.documentElement.classList.add('dark'); }, []);
   const init = getParams();
   const [activeTab, setActiveTab] = useState<Category | 'all'>(init.tab);
@@ -65,7 +78,7 @@ function App() {
   const [showEstimator, setShowEstimator] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
 
-  const { isFavorite, toggle: toggleFavorite } = useFavorites();
+  const { favorites, isFavorite, toggle: toggleFavorite } = useFavorites();
   const { add: addRecent } = useRecentlyViewed();
 
   // Sync state → URL
@@ -82,16 +95,14 @@ function App() {
     }
   }, [selectedBoss]);
 
-  // Current bosses
   const currentBosses = useMemo(() => bosses.filter(b => b.current), []);
 
-  // Available star tiers for current tab
   const availableTiers = useMemo(() => {
     const filtered = activeTab === 'all' ? bosses : bosses.filter(b => b.category === activeTab);
     return [...new Set(filtered.map(b => b.tier))];
   }, [activeTab]);
 
-  // Filtered boss list
+  // Filtered + sorted boss list (depends on favorites for sort order)
   const filtered = useMemo(() => {
     let list = [...bosses];
 
@@ -101,13 +112,10 @@ function App() {
     if (typeFilter !== null) list = list.filter(b => b.types.includes(typeFilter));
     if (query) list = list.filter(b => matchesBoss(b, query));
 
-    // Sort
     list.sort((a, b) => {
-      // Current always first
       if (a.current !== b.current) return a.current ? -1 : 1;
-      // Favorites second
-      const aFav = isFavorite(a.id);
-      const bFav = isFavorite(b.id);
+      const aFav = favorites.has(a.id);
+      const bFav = favorites.has(b.id);
       if (aFav !== bFav) return aFav ? -1 : 1;
 
       switch (sortKey) {
@@ -124,7 +132,7 @@ function App() {
     });
 
     return list;
-  }, [activeTab, starFilter, typeFilter, query, currentOnly, sortKey, isFavorite]);
+  }, [activeTab, starFilter, typeFilter, query, currentOnly, sortKey, favorites]);
 
   const scrollToBoss = useCallback((bossId: string) => {
     const el = document.getElementById(`boss-${bossId}`);
@@ -136,6 +144,17 @@ function App() {
     addRecent(boss.id);
   }, [addRecent]);
 
+  // Stable modal close callbacks
+  const closeBottomSheet = useCallback(() => setSelectedBoss(null), []);
+  const closeCalculator = useCallback(() => setShowCalculator(false), []);
+  const closeCalendar = useCallback(() => setShowCalendar(false), []);
+  const closeCompare = useCallback(() => setShowCompare(false), []);
+  const closeEstimator = useCallback(() => setShowEstimator(false), []);
+  const openCalculator = useCallback(() => setShowCalculator(true), []);
+  const openCalendar = useCallback(() => setShowCalendar(true), []);
+  const openCompare = useCallback(() => setShowCompare(true), []);
+  const openEstimator = useCallback(() => setShowEstimator(true), []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <Header
@@ -143,10 +162,10 @@ function App() {
         onQueryChange={setQuery}
         allBosses={bosses}
         onSelectBoss={handleSelectBoss}
-        onOpenCalendar={() => setShowCalendar(true)}
-        onOpenCalculator={() => setShowCalculator(true)}
-        onOpenCompare={() => setShowCompare(true)}
-        onOpenEstimator={() => setShowEstimator(true)}
+        onOpenCalendar={openCalendar}
+        onOpenCalculator={openCalculator}
+        onOpenCompare={openCompare}
+        onOpenEstimator={openEstimator}
       />
       <TabBar active={activeTab} onChange={setActiveTab} />
 
@@ -178,59 +197,36 @@ function App() {
 
       {/* Mobile tool buttons */}
       <div className="flex flex-wrap gap-2 px-3 pt-2 sm:hidden">
-        <button
-          onClick={() => setShowCalculator(true)}
-          className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700"
-        >
-          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
+        <button onClick={openCalculator} className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700">
+          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
           屬性計算機
         </button>
-        <button
-          onClick={() => setShowCalendar(true)}
-          className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700"
-        >
-          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
+        <button onClick={openCalendar} className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700">
+          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
           團戰日曆
         </button>
-        <button
-          onClick={() => setShowCompare(true)}
-          className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700"
-        >
-          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-          </svg>
+        <button onClick={openCompare} className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700">
+          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
           比較頭目
         </button>
-        <button
-          onClick={() => setShowEstimator(true)}
-          className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700"
-        >
-          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
+        <button onClick={openEstimator} className="flex items-center gap-1 rounded-lg bg-gray-800 px-3 py-1.5 text-xs text-gray-300 transition hover:bg-gray-700">
+          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
           難度評估
         </button>
       </div>
 
       {/* Main content */}
       <main className="mx-auto max-w-5xl px-3 pb-24 lg:pb-6" ref={listRef}>
-        {/* Current boss banner */}
         {activeTab === 'all' && !query && !currentOnly && (
           <div className="mb-4 mt-2">
             <CurrentBossBanner bosses={currentBosses} onSelect={scrollToBoss} />
           </div>
         )}
 
-        {/* Boss count */}
-        <div className="mb-3 mt-2 text-xs text-gray-400">
+        <div className="mb-3 mt-2 text-xs text-gray-400" aria-live="polite">
           顯示 {filtered.length} 隻頭目
         </div>
 
-        {/* Boss grid */}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" role="list" aria-label="頭目列表">
           {filtered.map(b => (
             <div key={b.id} id={`boss-${b.id}`} role="listitem">
@@ -246,42 +242,24 @@ function App() {
 
         {filtered.length === 0 && (
           <div className="py-20 text-center text-gray-400">
-            <div className="text-4xl">🔍</div>
+            <div className="text-4xl" aria-hidden="true">🔍</div>
             <div className="mt-2">找不到符合條件的頭目</div>
           </div>
         )}
       </main>
 
       {/* Lazy-loaded modals */}
-      <Suspense fallback={null}>
-        {selectedBoss && <BottomSheet boss={selectedBoss} onClose={() => setSelectedBoss(null)} />}
-        {showCalculator && <TypeCalculator onClose={() => setShowCalculator(false)} />}
-        {showCalendar && (
-          <RaidCalendar
-            bosses={bosses}
-            onClose={() => setShowCalendar(false)}
-            onSelect={handleSelectBoss}
-          />
-        )}
-        {showCompare && (
-          <CompareModal
-            bosses={bosses}
-            onClose={() => setShowCompare(false)}
-          />
-        )}
-        {showEstimator && (
-          <RaidEstimator
-            bosses={bosses}
-            onClose={() => setShowEstimator(false)}
-          />
-        )}
+      <Suspense fallback={<LoadingOverlay />}>
+        {selectedBoss && <BottomSheet boss={selectedBoss} onClose={closeBottomSheet} />}
+        {showCalculator && <TypeCalculator onClose={closeCalculator} />}
+        {showCalendar && <RaidCalendar bosses={bosses} onClose={closeCalendar} onSelect={handleSelectBoss} />}
+        {showCompare && <CompareModal bosses={bosses} onClose={closeCompare} />}
+        {showEstimator && <RaidEstimator bosses={bosses} onClose={closeEstimator} />}
       </Suspense>
 
-      {/* PWA prompts */}
       <InstallPrompt />
       <UpdateNotification />
 
-      {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

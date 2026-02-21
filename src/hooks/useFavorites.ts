@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 
 const STORAGE_KEY = 'pogo-raid-favorites';
 
@@ -11,11 +11,14 @@ function load(): Set<string> {
 }
 
 function save(set: Set<string>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify([...set])); } catch { /* ignore */ }
 }
 
 export function useFavorites() {
   const [favorites, setFavorites] = useState<Set<string>>(load);
+  // Keep a ref in sync so isFavorite is stable across renders
+  const favRef = useRef(favorites);
+  favRef.current = favorites;
 
   const toggle = useCallback((id: string) => {
     setFavorites(prev => {
@@ -27,7 +30,8 @@ export function useFavorites() {
     });
   }, []);
 
-  const isFavorite = useCallback((id: string) => favorites.has(id), [favorites]);
+  // Stable function — doesn't cause downstream re-renders
+  const isFavorite = useCallback((id: string) => favRef.current.has(id), []);
 
   return { favorites, toggle, isFavorite };
 }

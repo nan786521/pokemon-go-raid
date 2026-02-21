@@ -2,6 +2,9 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import type { Boss } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { RecommendBadge } from './RecommendBadge';
+import { TierLabel } from './TierLabel';
+import { RatingStars } from './RatingStars';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 import { CounterList } from './CounterList';
 import { getOfficialArtUrl, getSpriteUrl } from '../utils/pokemon';
 
@@ -10,15 +13,8 @@ interface Props {
   onClose: () => void;
 }
 
-function TierLabel({ boss }: { boss: Boss }) {
-  if (boss.category === 'dynamax') return <span className="text-xs font-bold text-orange-500">極巨化</span>;
-  if (boss.category === 'gigantamax') return <span className="text-xs font-bold text-purple-500">超極巨化</span>;
-  return <span className="text-xs font-bold text-yellow-600">{'★'.repeat(typeof boss.tier === 'number' ? boss.tier : 5)}</span>;
-}
-
 export function BottomSheet({ boss, onClose }: Props) {
   const [visible, setVisible] = useState(false);
-  const [imgError, setImgError] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
@@ -31,15 +27,16 @@ export function BottomSheet({ boss, onClose }: Props) {
   useEffect(() => {
     if (boss) {
       previousFocusRef.current = document.activeElement as HTMLElement;
-      setImgError(false);
       requestAnimationFrame(() => setVisible(true));
       document.body.style.overflow = 'hidden';
-      setTimeout(() => panelRef.current?.focus(), 100);
+      // Focus after transition completes
+      const timer = setTimeout(() => panelRef.current?.focus(), 310);
+      return () => { clearTimeout(timer); document.body.style.overflow = ''; };
     } else {
       setVisible(false);
       document.body.style.overflow = '';
+      return () => { document.body.style.overflow = ''; };
     }
-    return () => { document.body.style.overflow = ''; };
   }, [boss]);
 
   const handleClose = useCallback(() => {
@@ -53,9 +50,9 @@ export function BottomSheet({ boss, onClose }: Props) {
   // Escape key
   useEffect(() => {
     if (!boss) return;
-    function onKey(e: KeyboardEvent) {
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') handleClose();
-    }
+    };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [boss, handleClose]);
@@ -108,14 +105,12 @@ export function BottomSheet({ boss, onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-50" role="presentation">
-      {/* Backdrop */}
       <div
         className={`absolute inset-0 bg-black transition-opacity duration-300 ${visible ? 'opacity-50' : 'opacity-0'}`}
         onClick={handleClose}
         aria-hidden="true"
       />
 
-      {/* Panel */}
       <div
         ref={panelRef}
         role="dialog"
@@ -141,7 +136,6 @@ export function BottomSheet({ boss, onClose }: Props) {
           <div className="h-1 w-10 rounded-full bg-gray-600" />
         </div>
 
-        {/* Close button */}
         <button
           onClick={handleClose}
           className="absolute top-3 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full text-lg text-gray-400 transition hover:bg-gray-800 hover:text-white"
@@ -155,16 +149,11 @@ export function BottomSheet({ boss, onClose }: Props) {
         {/* Boss header */}
         <div className="flex items-start gap-4 px-4 pb-3">
           <div className="relative h-28 w-28 shrink-0">
-            <div className="absolute inset-0 animate-pulse rounded-lg bg-gray-700" aria-hidden="true" />
-            <img
-              src={imgError ? getSpriteUrl(boss.pokemon_id) : getOfficialArtUrl(boss.pokemon_id)}
+            <ImageWithSkeleton
+              src={getOfficialArtUrl(boss.pokemon_id)}
+              fallbackSrc={getSpriteUrl(boss.pokemon_id)}
               alt={boss.name['zh-TW']}
-              className="relative h-28 w-28 object-contain"
-              onError={() => setImgError(true)}
-              onLoad={e => {
-                const prev = (e.target as HTMLElement).previousElementSibling as HTMLElement;
-                if (prev) prev.style.display = 'none';
-              }}
+              className="h-28 w-28 object-contain"
             />
             {boss.current && (
               <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -202,23 +191,16 @@ export function BottomSheet({ boss, onClose }: Props) {
           </div>
         </div>
 
-        {/* Reason */}
         <div className="px-4 text-xs leading-relaxed text-gray-300">
           <span className="font-bold text-gray-100">推薦理由：</span>
           {boss.rec_reason}
         </div>
 
-        {/* Ratings */}
         <div className="flex gap-4 px-4 pt-2 text-xs">
-          <span className="text-gray-300">
-            PVE {'★'.repeat(boss.pve_rating)}{'☆'.repeat(5 - boss.pve_rating)}
-          </span>
-          <span className="text-gray-300">
-            PVP {'★'.repeat(boss.pvp_rating)}{'☆'.repeat(5 - boss.pvp_rating)}
-          </span>
+          <RatingStars label="PVE" rating={boss.pve_rating} />
+          <RatingStars label="PVP" rating={boss.pvp_rating} />
         </div>
 
-        {/* Counter list */}
         <div className="mt-3 pb-6">
           <CounterList counters={boss.counters} category={boss.category} />
         </div>

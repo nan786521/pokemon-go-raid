@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useMemo, memo } from 'react';
 import type { Boss } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { RecommendBadge } from './RecommendBadge';
+import { RatingStars } from './RatingStars';
 import { getSpriteUrl } from '../utils/pokemon';
 
 interface Props {
@@ -9,10 +10,14 @@ interface Props {
   onClose: () => void;
 }
 
-function BossColumn({ boss }: { boss: Boss | null }) {
+const BossColumn = memo(function BossColumn({ boss }: { boss: Boss | null }) {
   if (!boss) return <div className="flex-1 p-4 text-center text-gray-500">選擇頭目</div>;
 
-  const attackers = boss.counters.filter(c => c.role === 'attacker').sort((a, b) => b.dps - a.dps);
+  const topCounters = useMemo(
+    () => boss.counters.filter(c => c.role === 'attacker').sort((a, b) => b.dps - a.dps).slice(0, 3),
+    [boss.counters]
+  );
+
   return (
     <div className="flex-1 min-w-0 p-3">
       <div className="flex flex-col items-center gap-1">
@@ -27,12 +32,8 @@ function BossColumn({ boss }: { boss: Boss | null }) {
         </div>
         <div className="text-center text-gray-300">CP {boss.cp_range.min}~{boss.cp_range.max}</div>
         <div className="text-center text-gray-400">{boss.solo_possible ? 'Solo 可行' : `需 ${boss.min_trainers}+ 人`}</div>
-        <div className="text-center text-gray-300">
-          PVE {'★'.repeat(boss.pve_rating)}{'☆'.repeat(5 - boss.pve_rating)}
-        </div>
-        <div className="text-center text-gray-300">
-          PVP {'★'.repeat(boss.pvp_rating)}{'☆'.repeat(5 - boss.pvp_rating)}
-        </div>
+        <div className="text-center"><RatingStars label="PVE" rating={boss.pve_rating} /></div>
+        <div className="text-center"><RatingStars label="PVP" rating={boss.pvp_rating} /></div>
 
         <div className="mt-2">
           <div className="mb-1 text-xs font-bold text-gray-400 text-center">弱點</div>
@@ -43,7 +44,7 @@ function BossColumn({ boss }: { boss: Boss | null }) {
 
         <div className="mt-2">
           <div className="mb-1 text-xs font-bold text-gray-400 text-center">Top 反制</div>
-          {attackers.slice(0, 3).map(c => (
+          {topCounters.map(c => (
             <div key={c.pokemon_id} className="flex items-center gap-1 rounded bg-gray-800 px-2 py-1 mb-1">
               <img src={getSpriteUrl(c.pokemon_id)} alt="" className="h-5 w-5" style={{ imageRendering: 'pixelated' }} />
               <span className="truncate text-gray-200">{c.name['zh-TW']}</span>
@@ -54,14 +55,14 @@ function BossColumn({ boss }: { boss: Boss | null }) {
       </div>
     </div>
   );
-}
+});
 
 export function CompareModal({ bosses, onClose }: Props) {
   const [leftId, setLeftId] = useState('');
   const [rightId, setRightId] = useState('');
 
-  const left = bosses.find(b => b.id === leftId) ?? null;
-  const right = bosses.find(b => b.id === rightId) ?? null;
+  const left = useMemo(() => bosses.find(b => b.id === leftId) ?? null, [bosses, leftId]);
+  const right = useMemo(() => bosses.find(b => b.id === rightId) ?? null, [bosses, rightId]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="presentation">
@@ -77,20 +78,18 @@ export function CompareModal({ bosses, onClose }: Props) {
           <button onClick={onClose} className="flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-800" aria-label="關閉">✕</button>
         </div>
 
-        {/* Selectors */}
         <div className="flex gap-2 px-4 pb-3">
-          <select value={leftId} onChange={e => setLeftId(e.target.value)} className="flex-1 rounded-lg border border-gray-600 bg-gray-800 px-2 py-1.5 text-xs text-gray-200">
+          <select value={leftId} onChange={e => setLeftId(e.target.value)} aria-label="選擇頭目 A" className="flex-1 rounded-lg border border-gray-600 bg-gray-800 px-2 py-1.5 text-xs text-gray-200">
             <option value="">選擇頭目 A</option>
             {bosses.map(b => <option key={b.id} value={b.id}>{b.name['zh-TW']}</option>)}
           </select>
-          <span className="self-center text-gray-500 text-sm">VS</span>
-          <select value={rightId} onChange={e => setRightId(e.target.value)} className="flex-1 rounded-lg border border-gray-600 bg-gray-800 px-2 py-1.5 text-xs text-gray-200">
+          <span className="self-center text-gray-500 text-sm" aria-hidden="true">VS</span>
+          <select value={rightId} onChange={e => setRightId(e.target.value)} aria-label="選擇頭目 B" className="flex-1 rounded-lg border border-gray-600 bg-gray-800 px-2 py-1.5 text-xs text-gray-200">
             <option value="">選擇頭目 B</option>
             {bosses.map(b => <option key={b.id} value={b.id}>{b.name['zh-TW']}</option>)}
           </select>
         </div>
 
-        {/* Comparison */}
         <div className="flex divide-x divide-gray-700 pb-4">
           <BossColumn boss={left} />
           <BossColumn boss={right} />

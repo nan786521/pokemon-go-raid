@@ -1,8 +1,10 @@
-import { useState, memo } from 'react';
+import { memo } from 'react';
 import type { Boss } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { RecommendBadge } from './RecommendBadge';
+import { TierLabel } from './TierLabel';
 import { FavoriteButton } from './FavoriteButton';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 import { getOfficialArtUrl, getSpriteUrl } from '../utils/pokemon';
 
 interface Props {
@@ -12,26 +14,16 @@ interface Props {
   onToggleFavorite: () => void;
 }
 
-function TierLabel({ boss }: { boss: Boss }) {
-  if (boss.category === 'dynamax') return <span className="text-xs font-bold text-orange-500">極巨化</span>;
-  if (boss.category === 'gigantamax') return <span className="text-xs font-bold text-purple-500">超極巨化</span>;
-  return <span className="text-xs font-bold text-yellow-600">{'★'.repeat(typeof boss.tier === 'number' ? boss.tier : 5)}</span>;
-}
-
-function Countdown({ end }: { end: string }) {
+const Countdown = memo(function Countdown({ end }: { end: string }) {
   if (!end) return null;
-  const endDate = new Date(end);
-  const now = new Date();
-  const diff = endDate.getTime() - now.getTime();
+  const diff = new Date(end).getTime() - Date.now();
   if (diff <= 0) return <span className="text-xs text-red-400">已結束</span>;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
   return <span className="text-xs font-medium text-emerald-400">剩餘 {days}天{hours}時</span>;
-}
+});
 
 export const BossCard = memo(function BossCard({ boss, onSelect, isFavorite, onToggleFavorite }: Props) {
-  const [imgError, setImgError] = useState(false);
-
   return (
     <div className="relative">
       <button
@@ -41,17 +33,12 @@ export const BossCard = memo(function BossCard({ boss, onSelect, isFavorite, onT
         <div className="flex items-start gap-3 p-3 lg:gap-4 lg:p-4">
           {/* Pokemon Image */}
           <div className="relative h-16 w-16 shrink-0 lg:h-20 lg:w-20">
-            <div className="absolute inset-0 animate-pulse rounded-lg bg-gray-700" aria-hidden="true" />
-            <img
-              src={imgError ? getSpriteUrl(boss.pokemon_id) : getOfficialArtUrl(boss.pokemon_id)}
+            <ImageWithSkeleton
+              src={getOfficialArtUrl(boss.pokemon_id)}
+              fallbackSrc={getSpriteUrl(boss.pokemon_id)}
               alt={boss.name['zh-TW']}
               loading="lazy"
-              className="relative h-16 w-16 object-contain lg:h-20 lg:w-20"
-              onError={() => setImgError(true)}
-              onLoad={e => {
-                const prev = (e.target as HTMLElement).previousElementSibling as HTMLElement;
-                if (prev) prev.style.display = 'none';
-              }}
+              className="h-16 w-16 object-contain lg:h-20 lg:w-20"
             />
             {boss.current && (
               <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -73,12 +60,10 @@ export const BossCard = memo(function BossCard({ boss, onSelect, isFavorite, onT
               <span className="ml-1.5 text-xs font-normal text-gray-400">{boss.name.en}</span>
             </h3>
 
-            {/* Types */}
             <div className="mt-1 flex flex-wrap gap-1">
               {boss.types.map(t => <TypeBadge key={t} type={t} size="sm" />)}
             </div>
 
-            {/* Meta info row */}
             <div className="mt-1.5 flex flex-wrap items-center gap-2 text-xs text-gray-300">
               <span>CP {boss.cp_range.min}~{boss.cp_range.max}</span>
               <span className="text-gray-600">|</span>
@@ -86,7 +71,6 @@ export const BossCard = memo(function BossCard({ boss, onSelect, isFavorite, onT
               {boss.current && <Countdown end={boss.rotation_end} />}
             </div>
 
-            {/* Weaknesses */}
             <div className="mt-1.5 flex flex-wrap items-center gap-1">
               <span className="text-xs text-gray-400">弱點：</span>
               {boss.weaknesses.map(t => <TypeBadge key={t} type={t} size="sm" />)}
@@ -94,7 +78,6 @@ export const BossCard = memo(function BossCard({ boss, onSelect, isFavorite, onT
           </div>
         </div>
       </button>
-      {/* Favorite button - overlaid top-right */}
       <div className="absolute top-2 right-2 z-10">
         <FavoriteButton isFavorite={isFavorite} onToggle={onToggleFavorite} />
       </div>
