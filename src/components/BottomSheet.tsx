@@ -125,7 +125,7 @@ export function BottomSheet({ boss, onClose }: Props) {
           'absolute overflow-y-auto bg-gray-900 shadow-2xl transition-transform duration-300 ease-out outline-none',
           'inset-x-0 bottom-0 max-h-[85vh] rounded-t-2xl',
           'md:left-1/2 md:right-auto md:w-full md:max-w-2xl md:-translate-x-1/2',
-          'lg:inset-y-0 lg:left-auto lg:right-0 lg:bottom-auto lg:w-[28rem] lg:max-w-none lg:max-h-none lg:translate-x-0 lg:-translate-x-0 lg:rounded-t-none lg:rounded-l-2xl',
+          'lg:inset-y-0 lg:left-auto lg:right-0 lg:w-[28rem] lg:max-w-none lg:max-h-none lg:rounded-t-none lg:rounded-l-2xl',
           visible
             ? 'translate-y-0 lg:translate-x-0'
             : 'translate-y-full lg:translate-y-0 lg:translate-x-full',
