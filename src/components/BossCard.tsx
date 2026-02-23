@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useState, useEffect } from 'react';
 import type { Boss } from '../types';
 import { TypeBadge } from './TypeBadge';
 import { RecommendBadge } from './RecommendBadge';
@@ -15,8 +15,14 @@ interface Props {
 }
 
 const Countdown = memo(function Countdown({ end }: { end: string }) {
+  const [now, setNow] = useState(Date.now);
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   if (!end) return null;
-  const diff = new Date(end).getTime() - Date.now();
+  const diff = new Date(end).getTime() - now;
   if (diff <= 0) return <span className="text-xs text-red-400">已結束</span>;
   const days = Math.floor(diff / 86400000);
   const hours = Math.floor((diff % 86400000) / 3600000);

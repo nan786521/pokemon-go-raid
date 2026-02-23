@@ -11,12 +11,12 @@ interface Props {
 }
 
 const BossColumn = memo(function BossColumn({ boss }: { boss: Boss | null }) {
-  if (!boss) return <div className="flex-1 p-4 text-center text-gray-500">選擇頭目</div>;
-
   const topCounters = useMemo(
-    () => boss.counters.filter(c => c.role === 'attacker').sort((a, b) => b.dps - a.dps).slice(0, 3),
-    [boss.counters]
+    () => boss ? boss.counters.filter(c => c.role === 'attacker').sort((a, b) => b.dps - a.dps).slice(0, 3) : [],
+    [boss]
   );
+
+  if (!boss) return <div className="flex-1 p-4 text-center text-gray-500">選擇頭目</div>;
 
   return (
     <div className="flex-1 min-w-0 p-3">

@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 
 const STORAGE_KEY = 'pogo-raid-favorites';
 
@@ -18,7 +18,7 @@ export function useFavorites() {
   const [favorites, setFavorites] = useState<Set<string>>(load);
   // Keep a ref in sync so isFavorite is stable across renders
   const favRef = useRef(favorites);
-  favRef.current = favorites;
+  useEffect(() => { favRef.current = favorites; }, [favorites]);
 
   const toggle = useCallback((id: string) => {
     setFavorites(prev => {

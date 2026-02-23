@@ -33,7 +33,6 @@ export function BottomSheet({ boss, onClose }: Props) {
       const timer = setTimeout(() => panelRef.current?.focus(), 310);
       return () => { clearTimeout(timer); document.body.style.overflow = ''; };
     } else {
-      setVisible(false);
       document.body.style.overflow = '';
       return () => { document.body.style.overflow = ''; };
     }
